@@ -1,0 +1,61 @@
+﻿"Principal statistics for manufacturing industries, by North American Industry Classification System (NAICS) (x 1,000) c 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20"
+"Frequency: Annual"
+"Table: 16-10-0117-01 (formerly CANSIM 301-0008)"
+"Release date: 2024-12-18"
+"Geography: Canada, Geographical region of Canada, Province or territory"
+""
+""
+
+"Geography","Canada",,,,,,,,,,,
+"North American Industry Classification System (NAICS)","Sawmills (except shingle and shake mills)  [321111]",,,,,,,,,,,
+"Principal statistics","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023"
+,"Dollars",,,,,,,,,,,
+"Total revenue","F","11,314,824A","12,620,343A","13,332,309A","14,399,402B","16,173,043A","17,321,496A","14,344,904B","16,827,025B","26,457,847B","23,250,305B","15,349,202B"
+"Revenue from goods manufactured","F","11,010,111B","12,181,654C","12,836,414A","13,812,998B","15,644,577B","16,946,916B","14,005,510B","16,457,778B","26,022,149B","22,776,582B","14,849,826B"
+"Total expenses","F","10,731,159A","11,930,156A","13,090,748A","13,439,076A","14,276,758A","15,415,532B","14,581,261B","14,580,798B","18,212,166B","18,802,756B","15,540,941B"
+"Total salaries and wages, direct and indirect labour","F","1,579,924C","1,730,345C","1,870,561B","1,980,172B","2,014,636B","2,040,187B","1,938,727B","1,975,843B","2,164,937B","2,097,694B","1,859,695B"
+"Cost of materials and supplies","F","6,916,842E","7,592,315E","8,319,997E","8,562,674E","8,904,967E","9,728,220E","9,072,679E","9,190,215E","12,043,918E","12,336,154E","9,773,758E"
+
+Symbol legend:
+E, use with caution
+F, too unreliable to be published
+A, data quality: excellent
+B, data quality: very good
+C, data quality: good
+
+
+"Table Corrections:"
+Date,Note
+"2018-07-03","On July 4th, 2018, a correction was made to 36 data points for reference year 2015. At the lowest level, the data points affected were the Number of production workers, direct labour (changing from -2,437 to 923 persons), the Number of non-manufacturing employees, indirect labour (changing from -312 to 190 persons) and the Total number of employees, direct and indirect labour (changing from -2,750 to 1,112 persons) for the NAICS 33712 Household and institutional furniture manufacturing in Alberta. As a result, all combinations of these 3 principal statistics, for NAICS 33712, 3371, 337, and 31-33 for Alberta, the Prairies and Canada were also corrected."
+"2016-03-07","On March 7th, 2016, the following data for 2013 have been corrected: Revenues from Goods Manufactured for NAICS 32411 in the Prairies region and Canada, Revenues from Goods Manufactured for NAICS 3241 in the Prairie region and Canada, Revenues from Goods Manufactured for NAICS 324 in the Prairie region and Canada, Revenues from Goods Manufactured for NAICS 31-33 in the Prairie region and Canada, as well as Revenues from Goods Manufactured for 31-33 in Saskatchewan."
+"2016-07-26","July 26th, 2016, a correction was made to the French version of this table. The correction affects the titles for the Opening inventories of raw materials and the Opening inventories of goods or work in process. These were reversed in error."
+"2016-11-16","On November 16th, 2016 a correction was made to the scalar factor for the following variables: Total cost of energy, water utility and vehicle fuel; Cost of energy and water utility; Cost of vehicle fuel; Total opening inventories; Opening inventories of raw materials; Opening inventories, goods or work in process; Opening inventories, finished goods manufactured; Total closing inventories; Closing inventories, raw materials; Closing inventories, goods or work in process; Closing inventories, finished goods manufactured; and Manufacturing value added. These variables were displayed in dollars, while the data were meant to be published in thousands of dollars (dollars x 1000)."
+
+
+
+Footnotes:
+1,"This table replaces archived table 16-10-0038. Statistics Canada has introduced important improvements to the methods and processes used to compile economic statistics for reference year 2013. As a result, it should be noted that their comparability to the estimates for reference year 2012 has been impacted. Due to this apparent break in series, users are advised to use caution in making comparisons between the two sets of estimates."
+2,"The data are classified by industry based on the North American Industry Classification System (NAICS) Canada 2022 Version 1.0."
+3,"Estimates for the most recent year are preliminary, subject to revision."
+4,"Unlike table 16-10-0038, data from units operating in the Yukon, Northwest Territories and Nunavut, are no longer reclassified to 339990. All data are now aggregated and published within their own sector of activity."
+5,"Data quality indicators are based on the sampling coefficient of variation (CV) and response rate. Quality indicators description is: A - Excellent; B - Very good; C – Good;  D - Acceptable; E - Use with caution F - Too unreliable to publish."
+6,"Due to changes in systems and methodology starting in 2013, a limited number of variables (5) are available for publication in the preliminary version of the 2013 reference period data from the Annual Survey of Manufactures. Following further review, an additional 12 variables are available with the revised version of the 2013 data. These variables are: Total cost of energy, water utility and vehicle fuel; Cost of energy and water utility; Cost of vehicle fuel; Total opening inventories; Opening inventories of raw materials; Opening inventories, goods or work in process; Opening inventories, finished goods manufactured; Total closing inventories; Closing inventories, raw materials; Closing inventories, goods or work in process; Closing inventories, finished goods manufactured and Manufacturing value added. The 2013 revised data are released with the 2014 preliminary data."
+7,"On March 7th, 2016, the following data for 2013 have been corrected: Revenues from Goods Manufactured for NAICS 32411 in the Prairie region and Canada, Revenues from Goods Manufactured for NAICS 3241 in the Prairie region and Canada, Revenues from Goods Manufactured for NAICS 324 in the Prairie region and Canada, Revenues from Goods Manufactured for NAICS 31-33 in the Prairie region and Canada, as well as Revenues from Goods Manufactured for NAICS 31-33 in Saskatchewan."
+8,"Manufactured value added equals production minus consumption, where production is = (Revenue from goods manufactured + (Closing inventories, goods or work in process + Closing inventories, finished goods manufactured) - (Opening inventories, goods or work in process + Opening inventories, finished goods manufactured)). Beginning with the 2013 reference period, consumption is calculated as follows: (Opening inventories, raw materials + Cost of materials and supplies + Total cost of energy, water utility and vehicle fuel - Closing inventories of raw materials)."
+9,"On July 26th, 2016, a correction was made to the French version of this table. The correction affects the titles for the Opening inventories of raw materials and the Opening inventories of goods or work in process. These were reversed in error."
+10,"On November 16th, 2016 a correction was made to the scalar factor for the following variables: Total cost of energy, water utility and vehicle fuel; Cost of energy and water utility; Cost of vehicle fuel; Total opening inventories; Opening inventories of raw materials; Opening inventories, goods or work in process; Opening inventories, finished goods manufactured; Total closing inventories; Closing inventories, raw materials; Closing inventories, goods or work in process; Closing inventories, finished goods manufactured; and Manufacturing value added. These variables were displayed in dollars, while the data were meant to be published in thousands of dollars (dollars x 1000)."
+11,"From reference year 2015 to 2021, 5 additional variables are available: Production workers' wages, direct labour; Non-manufacturing employees' salaries, indirect labour; Total number of employees, direct and indirect labour; Number of production workers, direct labour and Number of non-manufacturing employees, indirect labour."
+12,"Totals may not add due to rounding."
+13,"Beginning with reference year 2018, the details between the cost of energy, water utility and vehicle fuel are no longer available."
+14,"After reviewing our confidentiality rules as part of our regular procedures, we determined that some unnecessary suppression had occurred, and additional data could be made available. This is the case for 2,048 data points in 2016, 1,760 data points in 2017 and 1,224 data points for 2018 preliminary data that were added to this table on March 12, 2020."
+15,"Beginning with reference year 2022, NAICS 311611 expired and was broken down into emerging items 311616, 311617 and 311619."
+16,"Beginning with reference year 2022, NAICS 31511 and 31519 expired and merged into emerging item 31512."
+17,"Beginning with reference year 2022, NAICS 31524, 31522 and 31528 expired and merged into emerging item 31525."
+18,"Beginning with reference year 2022, NAICS 33511 and 33512 expired and merged into emerging item 33513."
+19,"Beginning with reference year 2023, NAICS level 6 are no longer published."
+20,"Starting with the 2023 reference year, sales generated by a manufacturing process located outside Canada, regardless of the ownership of the raw materials used in the production process (Canadian-owned or not), are excluded from the survey."
+
+
+
+"How to cite: Statistics Canada. Table 16-10-0117-01  Principal statistics for manufacturing industries, by North American Industry Classification System (NAICS) (x 1,000)"
+https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1610011701

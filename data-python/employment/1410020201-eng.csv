@@ -1,0 +1,35 @@
+﻿"Employment by industry, annual 1 2 3"
+"Frequency: Annual"
+"Table: 14-10-0202-01 (formerly CANSIM 281-0024)"
+"Release date: 2025-03-27"
+"Geography: Canada, Province or territory"
+""
+""
+
+"Geography","Canada",,,,,,,,,,,,,,,,,,,,,,,
+"Type of employee","All employees 4",,,,,,,,,,,,,,,,,,,,,,,
+"North American Industry Classification System (NAICS) 3","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"
+,"Persons",,,,,,,,,,,,,,,,,,,,,,,
+"Forestry, logging and support  [11N] 5","68,149","67,119","62,977","61,497","59,143","56,061","52,462","45,663","39,506A","39,874A","40,179A","39,378A","38,318A","38,585A","40,108A","39,858A","39,649A","39,392A","38,547A","35,712B","38,154B","38,032B","37,162B","37,470B"
+"Forestry and logging  [113]","48,766","47,322","47,986","47,994","45,727","42,290","39,441","34,073","28,392A","28,648A","29,056A","28,432A","27,273A","26,765A","27,813A","27,308A","27,129A","27,174A","26,384A","24,205B","25,621B","25,831B","24,755B","24,316B"
+"Logging  [1133]","46,756","45,579","44,831","44,607","42,284","38,474","35,952","31,490","26,015A","27,074A","27,419A","27,084A","26,293A","25,686A","26,527A","25,829A","25,706A","25,640A","24,726A","22,588B","23,759B","24,007B","22,881B","22,551B"
+"Sawmills and wood preservation  [3211]","67,840","63,761","59,906","60,972","59,117","55,702","50,826","43,694","35,620A","36,140A","35,503A","34,679A","35,062A","35,979A","37,044A","37,247A","38,241A","38,369A","36,671A","33,373B","34,696A","34,744A","33,391B","31,834B"
+
+Symbol legend:
+A, data quality: excellent
+B, data quality: very good
+
+
+
+
+Footnotes:
+1,"The quality indicators take into account various factors that affect the quality of the data, notably the CV, the non-response errors and the imputation errors. Quality indicators indicate the following: A - Excellent; B - Very good; C - Good; D - Acceptable; E - Use with caution; F - Too unreliable to publish or sample size is too small to produce reliable estimates."
+2,"The introduction of administrative data in 2001 and the associated change in methodology resulted in level shifts for some series. This affects the comparability of pre- and post-2001 estimates."
+3,"Industry estimates in this table are based on the 2022 North American Industry Classification System (NAICS) Version 1.0."
+4,""All employees" is the sum of employees paid by the hour, salaried employees and other employees."
+5,"Forestry, logging and support (11N) includes the following industries: forestry and logging (113) and support activities for forestry (1153)."
+
+
+
+"How to cite: Statistics Canada. Table 14-10-0202-01  Employment by industry, annual"
+https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410020201

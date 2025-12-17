@@ -1,0 +1,209 @@
+\documentclass[12pt,a4paper]{article}
+
+% Math and symbols
+\usepackage{amsmath,amssymb,amsthm}
+
+% Graphics and figures
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% Citations and bibliography
+\usepackage[authoryear]{natbib}
+
+% Formatting
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{parskip}
+
+% Hyperlinks
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+% Title information
+\title{Offsetting U.S. Tariffs on Canadian Softwood Lumber: A DSGE Analysis of Domestic Subsidies}
+\author{Andrew Norris}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The United States has imposed increasing tariffs on Softwood Lumber Exports from Canada. In order to offset the effect of the tariffs, this paper proposes a direct subsidy for domestic softwood lumber usage. Using a semi open dynamic stochastic general equilibrium model, we can model the subsidies ability to offset the loss of export demand. By exploring the relationship of softwood lumber to Canada's economy and demand from the United States, we have calibrated the model to simulate the softwood lumber industry. This model will stimulate output from softwood lumber from sawmills, towards construction firms. Construction has high elasticity of substitution between building components, and as such downwards price pressures will increase outputs. This will have the secondary effect of increasing the housing stock in Canada, at a time where the country is facing a housing crisis.
+\end{abstract}
+
+\doublespacing
+
+\section{Introduction}
+% Introduction content goes here
+\subsection{Weakness in the Softwood Lumber Industry}
+The softwood lumber industry is a prominent part of the Canadian economy. Over the past 20 years it has displayed an inability to self correct against negative demand shocks. Since 1997 Agriculture, Forestry, Fishing and Hunting industries made up an average of 1.94\%, with Forestry making up 1.2\% on it's own. This has declined slightly in recent years, with the industries only making up 1.76\% in 2024. Within Forestry there are many components, however softwood lumber production made up 98\% of lumber production in 2020.  In aggregate softwood lumber production has decreased since 2004. The industry is declining in output in the long run.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{./figures/forestry_gdp.png}
+  \caption{Agriculture, Forestry, Fishing and Hunting as Percentage of Total GDP (1997--2024)}\label{fig:forestry_gdp}
+\end{figure}
+
+When looking at employment levels since 2001, we can see that there was a large negative shock to employment around the great recession. The sawmill industry has been unable to meaningful recover it's employment levels since then. While it has seen an increase in output per worker, it has not made up for the overall lack of labour inputs to the sector.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{./figures/employment.png}
+  \caption{Sawmill Employment (2021--2024)}\label{fig:employment}
+\end{figure}
+
+[did the sawmills shut down and is that why employment failed to recover]
+
+Despite the declining output, sawmills have seen large spikes in revenue in the past 10 years. In 2021, lumber prices spiked dramatically, leading to this higher revenue. This shows a divergence between price and output, where if a price spike can't cause a recovery in employment or output in the industry. After the crisis there was an increase in the output per worker, peaking around 2016. However this was not associate with an increase in employment. 
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{./figures/lumber_output_graph.png}
+    \caption{Lumber Production (2003--2025)}
+    \label{fig:output}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{./figures/productivity_analysis.png}
+    \caption{Sawmill Productivity Index (2004--2024)}\label{fig:productivity}
+  \end{minipage}
+\end{figure}
+
+Despite the falling employment and production, the industry saw a large spike in revenue around 2021. This was correlated with a massive price spike in lumber. This massive spike in revenue would be expected to be correlated with a long term decaying increase in production and employment in order to take advantage of the price opportunities. 
+
+However this recovery in employment never came. Showing that the lumber industry in Canada can not self correct to its pre financial crisis levels of production and employment, even given massive price spikes in its output goods. 
+
+This suggests that the industry is unable to self correct. Given the possibility of additional negative demand shocks on exports, the industry needs to find a way to make up for the losses in a way that domestic demand currently cannot.
+
+[Ideas for why the ]
+
+\subsection{Reliance on Exports to the U.S.}
+The softwood lumber industry is particularly reliant on exports to the United States. In both 2006 and 2020 around 67\% of all softwood lumber production was exported. [how much goes to construction] With the United States making up 75.8\% of those in January 2017. This means the industry is at risk due to its large dependence on exports to the US. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{./figures/housing_exports_comparison.png}
+  \caption{US Housing Starts vs Canadian Lumber Exports (2000--2024)}
+  \label{fig:housing_exports}
+\end{figure}
+
+Historically the demand for softwood lumber in the US has been correlated with the number of housing starts in the US. When housing starts fell in 2006-2009 during the financial crisis in the United States, employment in the sawmill industry also fell sharply. Since then employment has sat steady at ~50\% of its peaks. Even as US housing starts have recovered, this was not correlated with an increase in employment in the industry
+
+While employment had not recovered, from 2010 to 2016 there was a resurgence in sawmill production, mirroring the increase in housing starts in the US. This was mostly driven by an increase in output per worker. Showing that the industry has been stabilized in the past by this demand by the United States.
+
+\subsection{Tariffs on Canadian Softwood Lumber}
+From 2006 to 2015 lumber trade between the US and Canada was governed by the Softwood Lumber Agreement (SLA 2006). This agreement contained no countervailing duties or anti-dumping tariffs. Instead it relied on export taxes and quotas which varied alongside the price of lumber in the United States. [GET A GRAPH TO SHOW HOW THIS IS DIFFERENT]
+[Compare effective rates of export taxes]
+
+Following the end of this agreement, there was no deal in place, meaning no tariffs, export quotas, or export taxes. This period corresponded with the a peak in lumber production and revenue. 
+
+Since 2017 the correlation between US housing starts and lumber exports has shown increased residuals. Indicating that housing starts are no longer an accurate indicator of export demand for softwood lumber in the United States. This implies that an increase in housing starts in the US will not correspond strongly with increased production or employment in the industry.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{./figures/housing_exports_scatter.png}
+    \caption{Linear Regression: Housing Starts vs Lumber Exports}
+    \label{fig:housing_scatter}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{./figures/housing_exports_residuals.png}
+    \caption{Residual Plot Over Time}
+    \label{fig:housing_residuals}
+  \end{minipage}
+\end{figure}
+
+In 2017 the United States began investigating Canadian softwood lumber producers, accusing them of being unfairly subsidized. The first investigations began in January 2017. This investigation concluded that Canadian softwood lumber producers are subsidized by the stumping fees that they pay on government land. It was assessed that the subsidy amounted to 3.34\%-18.19\% [TODO] depending on the firm. As a result the United States began imposing two types of tariffs on Canadian lumber producers. Anti-dumping rates and Countervailing duty rates. Anti-dumping rates are intended to offset the effect of low cost commodities bringing down the domestic price of the goods. Countervailing duties are meant to offset the subsidies given by foreign governments to their domestic firms.
+
+These rates took effect in 2017, and have been under annual review since then. The rates were assessed for individual firms, based on their calculated subsidy rate, as well as a rate for all other firms. By using market share in 2023, we have calculated an effective tariff rate on the industry.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{./figures/tariff_timeline.png}
+  \caption{US Weighted Tariff Rate on Canadian Softwood Lumber (2017--2025)}
+  \label{fig:tariff_timeline}
+\end{figure}
+
+While these rates varied slightly from 2017 to 2025, they have spiked upwards this year with the re-election of Donald Trump. It is hard to assess the full impact of these tariffs, but with the anti-dumping rates almost tripling this year, they must be considered when looking forward in the softwood lumber industry.
+
+\subsection{Inducing Domestic Demand through Subsidies}
+In the face of these increased tariffs, there is a risk that the industry will face another negative demand shock that it cannot recover from. 
+
+In order to compensate for this demand loss, this paper proposes a model for inducing demand through subsidies for the construction industry.
+
+This is in line with Prime Minister Mark Carney's proposals to offer loans to sawmills and ensure government construction projects use Canadian lumber.
+
+
+[housing starts in canada?]
+
+In 2024 the construction industry contributed $165 Billion to Canadian GDP, compared to $40 Billion by the entire Agriculture, Forestry, Fishing and Hunting industries. The scale of this industry makes it a strong target for inducing demand in the much smaller lumber industry. 
+
+Construction firms can often substitute between concrete, steel, and lumber for different projects depending on prices. And while there was a large spike in lumber prices around covid 2019, it's price is now closely comparable to ready mix concrete when indexed from 2010 prices. This gives the government the opportunity to make lumber a more appealing material for construction by lowering its real price to be in line with steel and concrete.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{./figures/material_comparison.png}
+  \caption{Construction Material Price Indices (2003--2025)}
+  \label{fig:material_comparison}
+\end{figure}
+
+\section{Literature Review}
+
+This paper runs calibration much like is outlined in [CALIBRATION PAPER]
+
+\section{Theoretical Model}
+% Model description goes here
+\subsection{Overview}
+
+The model proposed in this paper is a small open economy DSGE model. It relies on two types of firms, sawmills and construction firms, with softwood lumber being an intermediary good between them. Additionally it has a household consumer, and a government.
+
+The households will provide labour and capital to the sawmills firms, at the equilibrium wages and rental rate of capital, whom will output softwood lumber at the valued market price. This lumber will be taken as an input by the construction firms, alongside other alternatives to lumber. However the price the construction firms pay, will be subsidised by the government. From these inputs the construction firms will produce a final good, which will be consumed by the household. The government subsidy will be funded through a lump sum tax on the household.
+
+
+\section{Calibration}
+% Calibration section goes here
+\subsection{Base Year and Steady State}
+Given the fact that tariffs, export taxes, and quotas we're not present in 2016, this will be used as the base year for calibrating the model.
+
+\subsection{Setting Parameters}
+The calibration for this model follows the steps outlined in [PAPER].
+
+
+
+
+\section{Results}
+% Results and analysis goes here
+
+\section{Policy Implications}
+% Policy discussion goes here
+
+\section{Conclusion}
+% Conclusion goes here
+
+\section{Appendix}
+\subsection{Model}
+\subsubsection{Sawmill Firms}
+${Y^W}$ = Lumber Output \newline
+$A^S$ = Technology Multiplier for Sawmill Firms \newline
+$K$ = Capital Input to Sawmill Firms \newline
+$L$ = Labour Input to Sawmill Firms \newline
+$\alpha$ = Share of Capital Input to Sawmill Firms \newline
+$r$ = Rental rate of Capital \newline
+$w$ = Wage rate of Labour \newline
+$P^W$ = Price of Lumber \newline
+
+% \bibliographystyle{aer}
+% \bibliography{references}
+
+\end{document}
