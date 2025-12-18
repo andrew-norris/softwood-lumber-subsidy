@@ -13,7 +13,7 @@
 \usepackage{multirow}
 
 % Citations and bibliography
-\usepackage[authoryear]{natbib}
+\usepackage[numbers]{natbib}
 
 % Formatting
 \usepackage[margin=1in]{geometry}
@@ -37,7 +37,6 @@ The United States has imposed increasing tariffs on Softwood Lumber Exports from
 \end{abstract}
 
 \doublespacing
-
 \section{Introduction}
 % Introduction content goes here
 \subsection{Weakness in the Softwood Lumber Industry}
@@ -46,7 +45,9 @@ The softwood lumber industry is a prominent part of the Canadian economy. Over t
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.85\textwidth]{./figures/forestry_gdp.png}
-  \caption{Agriculture, Forestry, Fishing and Hunting as Percentage of Total GDP (1997--2024)}\label{fig:forestry_gdp}
+  \caption{Agriculture, Forestry, Fishing and Hunting as Percentage of Total GDP (1997--2024)}
+  \label{fig:forestry_gdp}
+  % \footnotesize Source: \citet{statcan2025gdp}, Table 36-10-0434-03.
 \end{figure}
 
 When looking at employment levels since 2001 \cite{statcan2025employment}, we can see that there was a large negative shock to employment around the great recession. The sawmill industry has been unable to meaningful recover it's employment levels since then \cite{statcan2025employment}. While it has seen an increase in output per worker, it has not made up for the overall lack of labour inputs to the sector.
@@ -124,7 +125,7 @@ Since 2017 the correlation between US housing starts and lumber exports has show
   \end{minipage}
 \end{figure}
 
-In 2017 the United States began investigating Canadian softwood lumber producers, accusing them of being unfairly subsidized \cite{usitc2017subsidy}. The first investigations began in January 2017 [TODO]. This investigation concluded that Canadian softwood lumber producers are subsidized by the stumpage fees that they pay on government land [TODO]. It was assessed that the subsidy amounted to 3.34\%-18.19\% \cite{commerce2017dumping} depending on the firm. As a result the United States began imposing two types of tariffs on Canadian lumber producers \cite{https://news.gov.bc.ca/releases/2017FLNR0127-001258}. Anti-dumping rates and Countervailing duty rates. Anti-dumping rates are intended to offset the effect of low cost commodities bringing down the domestic price of the goods. Countervailing duties are meant to offset the subsidies given by foreign governments to their domestic firms.
+In 2017 the United States began investigating Canadian softwood lumber producers, accusing them of being unfairly subsidized \cite{usitc2017subsidy}. The first investigations began in January 2017 [TODO]. This investigation concluded that Canadian softwood lumber producers are subsidized by the stumpage fees that they pay on government land [TODO]. It was assessed that the subsidy amounted to 3.34\%-18.19\% \cite{commerce2017dumping} depending on the firm. As a result the United States began imposing two types of tariffs on Canadian lumber producers \cite{bcgov2017tariff1}. Anti-dumping rates and Countervailing duty rates. Anti-dumping rates are intended to offset the effect of low cost commodities bringing down the domestic price of the goods. Countervailing duties are meant to offset the subsidies given by foreign governments to their domestic firms.
 
 These rates took effect in 2017, and have been under annual review since then \cite{bcgov2017tariff2}. The rates were assessed for individual firms, based on their calculated subsidy rate, as well as a rate for all other firms. By using market share in 2023 \cite{forestnet2024production}, we have calculated an effective tariff rate on the industry.
 
