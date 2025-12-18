@@ -147,7 +147,7 @@ This is in line with Prime Minister Mark Carney's proposals to offer loans to sa
 
 [housing starts in canada?]
 
-In 2024 the construction industry contributed $165 Billion to Canadian GDP, compared to $40 Billion by the entire Agriculture, Forestry, Fishing and Hunting industries. The scale of this industry makes it a strong target for inducing demand in the much smaller lumber industry. 
+In 2024 the construction industry contributed \$165 Billion to Canadian GDP, compared to \$40 Billion by the entire Agriculture, Forestry, Fishing and Hunting industries. The scale of this industry makes it a strong target for inducing demand in the much smaller lumber industry. 
 
 Construction firms can often substitute between concrete, steel, and lumber for different projects depending on prices. And while there was a large spike in lumber prices around covid 2019, it's price is now closely comparable to ready mix concrete when indexed from 2010 prices. This gives the government the opportunity to make lumber a more appealing material for construction by lowering its real price to be in line with steel and concrete.
 
@@ -163,12 +163,69 @@ Construction firms can often substitute between concrete, steel, and lumber for 
 This paper runs calibration much like is outlined in [CALIBRATION PAPER]
 
 \section{Theoretical Model}
-% Model description goes here
+
 \subsection{Overview}
 
 The model proposed in this paper is a small open economy DSGE model. It relies on two types of firms, sawmills and construction firms, with softwood lumber being an intermediary good between them. Additionally it has a household consumer, and a government.
 
-The households will provide labour and capital to the sawmills firms, at the equilibrium wages and rental rate of capital, whom will output softwood lumber at the valued market price. This lumber will be taken as an input by the construction firms, alongside other alternatives to lumber. However the price the construction firms pay, will be subsidised by the government. From these inputs the construction firms will produce a final good, which will be consumed by the household. The government subsidy will be funded through a lump sum tax on the household.
+The sawmills produce softwood lumber from capital and labour using a Cobb-Douglas production function. Technology is provided as a static parameter. $\alpha \in (0,1)$ denotes the share of income spent on each input.
+\begin{equation}\label{eq:sawmill_prod}
+Y^W_t = A^S K_t^{\alpha} L_t^{1-\alpha}
+\end{equation}
+
+Sawmill firms will be constrained by the cost of their inputs and the value of their outputs. They pay the market rates for wages and the rental rate of capital, and earn income based on their output quantity and the price of softwood lumber. Sawmills will choose $K_t$ and $L_t$ to maximize output.
+\begin{equation}\label{eq:sawmill_bc}
+P^W Y^W_t = r_t K_t + w_t L_t
+\end{equation}
+
+The output of the sawmill firms will be used as an input for the construction firms. Whom will use softwood lumber alongside alternatives to lumber in order to create the final good. The production function for construction firms is a Constant Elasticity of Substitution function. Allowing the model to fine tune the ability of the model to adjust how substitutable lumber and it's alternatives in construction are. Technology is provided as a static parameter.
+
+\begin{equation}\label{eq:construction_prod}
+Y^F_t = A^C\left(\theta\, W_t^{\phi} + (1-\theta)\, \Psi_t^{\phi}\right)^{1/\phi}.
+\end{equation}
+
+The construction firms will be constrained by the cost of their inputs and the value of their outputs. They pay below the market rate for lumber based on the size of the government subsidy. 
+\begin{equation}\label{eq:effective_lumber_price}
+\mathcal{P}^{W}_t = (1-\omega)\, P^W_t.
+\end{equation}
+
+They pay the static price for alternatives to lumber. They receive revenue based on their output. They choose $W^{\theta}_t$ and $\Phi^{\theta}_t$ to maximize output.
+\begin{equation}\label{eq:construction_cost}
+Y^F_t = \mathcal{P}^{W}_t\, W_t + P^\Psi_t\, \Psi_t.
+\end{equation}
+
+The government pays the lumber subsidy based on the set rate $\omega$. They only pay this subsidy on the portion of lumber which is used as in input for the construction firms.
+\begin{equation}\label{eq:gov_spending}
+G_t = \omega\, P^W_t\, W_t.
+\end{equation}
+
+The government pays for this policy by collecting a lump sum tax on the consumers. Such that their budget is balanced.
+
+The households will provide labour and capital to the sawmills firms. They will earn income on their provided capital and labour which they will spend on consumption, investment, and lump sum transfers to the government.
+
+\paragraph{Budget constraint}
+\begin{equation}\label{eq:hh_budget}
+C_t + K_{t+1} = w_t L_t + r_t K_t - T_t.
+\end{equation}
+
+The households will derive utility from leisure and consumption of the final good. The utility function has been defined as a summation of logs. Where $\gamma$ represents the preference weight between the two goods.
+\paragraph{Preferences}
+\begin{equation}\label{eq:hh_utility}
+U = \log(C_t) + \gamma \log(1-L_t).
+\end{equation}
+
+At each time step the consumer will make the choice between consumption and investment based on the Euler equation.
+\begin{equation}
+\frac{1}{C_t}
+= \beta \frac{1}{C_{t+1}} (r_{t+1} + 1 - \delta).
+\end{equation}
+They additionally will choose how much to work and consume based on the given wage.
+\begin{equation}
+\frac{\gamma C_t}{1-L_t}
+= w_t.
+\end{equation}
+
+In order to model export demand, an additional exogenous variable $X$ will be defined. This will be used to simulate shocks due to tariffs.
 
 
 \section{Calibration}
@@ -191,8 +248,306 @@ The calibration for this model follows the steps outlined in [PAPER].
 \section{Conclusion}
 % Conclusion goes here
 
-% Appendix is in appendix.tex - compile separately or uncomment line below to include:
-% \input{appendix-content.tex}
+\newpage
+
+\section{Appendix}
+\subsection{Model}
+\subsubsection{Model Definition}
+\paragraph{Sawmill Firms}
+\noindent\newline
+\textbf{Table 1: Notation for Sawmill Firms}
+\vspace{0.6em}
+
+\noindent
+\begin{tabular}{@{}llp{8cm}@{}}
+\hline
+\noalign{\vskip 0.2em}
+\textbf{} & \textbf{Symbol} & \textbf{Description} \\
+\hline
+\noalign{\vskip 0.4em}
+\textbf{Variables} 
+& $Y^W$ & Lumber output \\
+& $K$   & Capital input to sawmill firms \\
+& $L$   & Labour input to sawmill firms \\[0.8em]
+
+\textbf{Prices}
+& $r$   & Rental rate of capital \\
+& $w$   & Wage rate of labour \\
+& $P^W$ & Price of lumber \\[0.8em]
+
+\textbf{Parameters}
+& $A^S$    & Technology parameter for sawmill firms \\
+& $\alpha$ & Capital share parameter, $\alpha \in (0,1)$ \\
+\hline
+\end{tabular}
+
+\vspace{1em}
+
+
+\paragraph{Production Function:}
+\begin{equation}
+Y^W_t = A^S K_t^{\alpha} L_t^{1-\alpha}
+\tag{\ref{eq:sawmill_prod}}
+\end{equation}
+
+\paragraph{Budget Constraint:}
+\begin{equation}
+TC = r_t K_t + w_t L_t
+\tag{\ref{eq:sawmill_bc}}
+\end{equation}
+
+\paragraph{Construction Firms}
+\noindent\newline
+\textbf{Table 2: Notation for Construction Firms}
+\vspace{0.6em}
+
+\noindent
+\begin{tabular}{@{}llp{8cm}@{}}
+\hline
+\noalign{\vskip 0.2em}
+\textbf{} & \textbf{Symbol} & \textbf{Description} \\
+\hline
+\noalign{\vskip 0.4em}
+\textbf{Variables}
+& $Y^F$ & Final output produced by construction firms \\
+& $W$   & Lumber input used in construction \\
+& $\Psi$ & Alternative inputs to lumber \\[0.8em]
+
+\textbf{Prices}
+& $\mathcal{P}^W$ & Effective price of lumber \\
+& $P^\Psi$ & Price of alternative inputs \\[0.8em]
+
+\textbf{Parameters}
+& $A^C$ & Technology parameter for construction firms \\
+& $\theta$ & Input share or scaling parameter in construction production \\
+& $\phi$ & Elasticity of substitution between lumber and alternatives \\
+\hline
+\end{tabular}
+
+\vspace{1em}
+
+\paragraph{Production}
+\begin{equation}
+Y^F_t = A^C\left(\theta\, W_t^{\phi} + (1-\theta)\, \Psi_t^{\phi}\right)^{1/\phi}.
+\tag{\ref{eq:construction_prod}}
+\end{equation}
+
+\paragraph{Cost}
+\begin{equation}
+TC^C_t = \mathcal{P}^{W}_t\, W_t + P^\Psi_t\, \Psi_t.
+\tag{\ref{eq:construction_cost}}
+\end{equation}
+
+\paragraph{Effective price of lumber}
+\begin{equation}
+\mathcal{P}^{W}_t = (1-\omega)\, P^W_t.
+\tag{\ref{eq:effective_lumber_price}}
+\end{equation}
+
+\paragraph{Government}
+\noindent\newline
+\textbf{Table 3: Notation for Government}
+\vspace{0.6em}
+
+\noindent
+\begin{tabular}{@{}llp{8cm}@{}}
+\hline
+\noalign{\vskip 0.2em}
+\textbf{} & \textbf{Symbol} & \textbf{Description} \\
+\hline
+\noalign{\vskip 0.4em}
+\textbf{Variables}
+& $G$ & Government expenditure on lumber tax credits \\[0.8em]
+
+\textbf{Policy Instruments}
+& $T$ & Lump-sum tax levied on households \\
+& $\omega$ & Tax credit rate applied to lumber inputs \\
+\hline
+\end{tabular}
+
+\vspace{1em}
+
+\paragraph{Lumber tax credit expenditure}
+\begin{equation}
+G_t = \omega\, P^W_t\, W_t.
+\tag{\ref{eq:gov_spending}}
+\end{equation}
+
+\paragraph{Government budget constraint}
+\begin{equation}
+G_t = T_t.
+\end{equation}
+
+\paragraph{Households}
+\noindent\newline
+\textbf{Table 4: Notation for Households}
+\vspace{0.6em}
+
+\noindent
+\begin{tabular}{@{}llp{8cm}@{}}
+\hline
+\noalign{\vskip 0.2em}
+\textbf{} & \textbf{Symbol} & \textbf{Description} \\
+\hline
+\noalign{\vskip 0.4em}
+\textbf{Variables}
+& $C$ & Consumption of the final good \\
+& $L$ & Labour supplied by the household \\[0.8em]
+
+\textbf{Parameters}
+& $\gamma$ & Preference weight on leisure in utility \\
+\hline
+\end{tabular}
+
+\vspace{1em}
+
+\paragraph{Preferences}
+\begin{equation}
+U = \log(C_t) + \gamma \log(1-L_t).
+\tag{\ref{eq:hh_utility}}
+\end{equation}
+
+\paragraph{Budget constraint}
+\begin{equation}
+C_t + K_{t+1} = w_t L_t + r_t K_t - T_t.
+\tag{\ref{eq:hh_budget}}
+\end{equation}
+
+\paragraph{External Demand}
+\noindent\newline
+\textbf{Table 5: Notation for External Demand}
+\vspace{0.6em}
+
+\noindent
+\begin{tabular}{@{}llp{8cm}@{}}
+\hline
+\noalign{\vskip 0.2em}
+\textbf{} & \textbf{Symbol} & \textbf{Description} \\
+\hline
+\noalign{\vskip 0.4em}
+\textbf{Variables}
+& $X$ & External demand for lumber \\ 
+\hline
+\end{tabular}
+
+\vspace{1em}
+
+\subsubsection{Market Clearing Conditions}
+\begin{table}[H]
+\centering
+\caption{Notation for Market Clearing Conditions}
+\vspace{0.6em}
+\begin{tabular}{@{}llp{8cm}@{}}
+\hline
+\noalign{\vskip 0.2em}
+\textbf{} & \textbf{Symbol} & \textbf{Description} \\
+\hline
+\noalign{\vskip 0.4em}
+\textbf{Markets}
+& $Y^W$ & Lumber market clearing output \\
+& $Y^F$ & Final goods market clearing output \\
+& $L$   & Labour market clearing quantity \\
+\hline
+\end{tabular}
+\end{table}
+
+Market clearing in each sector requires:
+\begin{align}
+Y^W &= W + X, \label{eq:lumber_market} \\
+Y^F &= C,     \label{eq:final_market} \\
+L   &= L^D.   \label{eq:labour_market}
+\end{align}
+
+\subsubsection{First Order Conditions}
+\paragraph{Households}
+\noindent\newline
+The household chooses $\{C_t, L_t, K_{t+1}\}_{t=0}^{\infty}$ to maximize
+utility subject to the budget constraint. The first-order conditions are:
+\begin{align}
+\frac{1}{C_t} &= \lambda_t, \\[0.4em]
+\frac{\gamma}{1 - L_t} &= \lambda_t w_t, \\[0.4em]
+\lambda_t &= \beta \lambda_{t+1}(r_{t+1} + 1 - \delta).
+\end{align}
+
+These conditions imply the Euler equation:
+\begin{equation}
+\frac{1}{C_t}
+= \beta \frac{1}{C_{t+1}} (r_{t+1} + 1 - \delta).
+\end{equation}
+
+And the Intratemporal Consumption Leisure Tradeoff
+\begin{equation}
+\frac{\gamma C_t}{1-L_t}
+= w_t.
+\end{equation}
+
+
+\paragraph{Sawmill Firms}
+\noindent\newline
+Sawmill firms choose $K_t$ and $L_t$ to maximize profits given prices. The first-order conditions are:
+\begin{align}
+(1-\alpha) P^W_t A^S K_t^{\alpha} L_t^{-\alpha}
+&= w_t, \\[0.4em]
+\alpha P^W_t A^S K_t^{\alpha-1} L_t^{1-\alpha}
+&= r_t.
+\end{align}
+
+\paragraph{Construction Firms}
+\noindent\newline
+Construction firms choose $W_t$ and $\Psi_t$ to minimize costs subject to
+the production function. The first-order conditions are:
+\begin{align}
+\theta A^C
+\left(
+\theta W_t^{\phi} + (1-\theta)\Psi_t^{\phi}
+\right)^{\frac{1}{\phi}-1}
+W_t^{\phi-1}
+&= \mathcal{P}^W_t, \\[0.6em]
+(1-\theta) A^C
+\left(
+\theta W_t^{\phi} + (1-\theta)\Psi_t^{\phi}
+\right)^{\frac{1}{\phi}-1}
+\Psi_t^{\phi-1}
+&= P^\Psi_t.
+\end{align}
+
+\subsection{Effective Tariff Rate}
+\paragraph{Calculating the Rate}
+\noindent\newline
+The effective U.S. tariff rate on Canadian softwood lumber is constructed as a
+firm-weighted average of countervailing and anti-dumping duties:
+\begin{equation}
+\tau_t = \sum_{i \in \mathcal{F}} \omega_i \tau_{i,t},
+\end{equation}
+where $\tau_{i,t}$ denotes the tariff rate applied to firm $i$ at time $t$, and
+$\omega_i$ is firm $i$'s share of Canadian softwood lumber exports.
+
+\paragraph{Export Weights}
+\noindent\newline
+\begin{table}[H]
+\centering
+\caption{Production Weights Used in the Construction of the Effective Tariff Rate}
+\label{tab:tariff_weights}
+\vspace{0.6em}
+\begin{tabular}{@{}p{12cm}c@{}}
+\hline
+\noalign{\vskip 0.2em}
+\textbf{Firm} & \textbf{Weight} \\
+\hline
+\noalign{\vskip 0.4em}
+West Fraser Timber Co. Ltd. & 0.136 \\
+Canfor Corporation & 0.111 \\
+Resolute Forest Products & 0.096 \\
+J.D. Irving, Limited & 0.055 \\
+All remaining Canadian softwood lumber producers & 0.602 \\[0.6em]
+\hline
+\noalign{\vskip 0.2em}
+\textbf{Total} & \textbf{1.000} \\
+\hline
+\end{tabular}
+\end{table}
+
+Tariff rates are calculated based on the dates of actions taken as part of the Annual Reviews (AR) 1 through 6. Constant weights were used for this paper based on 2023 export quantities. After AR3, resolute was not given individual tariff rates. After AR5 J.D. Irving was not given individual tariff rates.
 
 % \bibliographystyle{aer}
 % \bibliography{references}

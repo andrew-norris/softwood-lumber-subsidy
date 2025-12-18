@@ -1,0 +1,96 @@
+\documentclass[12pt,a4paper]{article}
+
+% Math and symbols
+\usepackage{amsmath,amssymb,amsthm}
+
+% Graphics and figures
+\usepackage{graphicx}
+\usepackage{float}
+
+% Formatting
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{parskip}
+
+% Hyperlinks
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\title{Theoretical Model: Canadian Softwood Lumber DSGE}
+\author{Andrew Norris}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\doublespacing
+
+\section{Theoretical Model}
+
+\subsection{Overview}
+
+The model proposed in this paper is a small open economy DSGE model. It relies on two types of firms, sawmills and construction firms, with softwood lumber being an intermediary good between them. Additionally it has a household consumer, and a government.
+
+The sawmills produce softwood lumber from capital and labour using a Cobb-Douglas production function. Technology is provided as a static parameter. $\alpha \in (0,1)$ denotes the share of income spent on each input.
+\begin{equation}\label{eq:sawmill_prod}
+Y^W_t = A^S K_t^{\alpha} L_t^{1-\alpha}
+\end{equation}
+
+Sawmill firms will be constrained by the cost of their inputs and the value of their outputs. They pay the market rates for wages and the rental rate of capital, and earn income based on their output quantity and the price of softwood lumber. Sawmills will choose $K_t$ and $L_t$ to maximize output.
+\begin{equation}\label{eq:sawmill_bc}
+P^W Y^W_t = r_t K_t + w_t L_t
+\end{equation}
+
+The output of the sawmill firms will be used as an input for the construction firms. Whom will use softwood lumber alongside alternatives to lumber in order to create the final good. The production function for construction firms is a Constant Elasticity of Substitution function. Allowing the model to fine tune the ability of the model to adjust how substitutable lumber and it's alternatives in construction are. Technology is provided as a static parameter.
+
+\begin{equation}\label{eq:construction_prod}
+Y^F_t = A^C\left(\theta\, W_t^{\phi} + (1-\theta)\, \Psi_t^{\phi}\right)^{1/\phi}.
+\end{equation}
+
+
+
+The construction firms will be constrained by the cost of their inputs and the value of their outputs. They pay below the market rate for lumber based on the size of the government subsidy. 
+\begin{equation}\label{eq:effective_lumber_price}
+\mathcal{P}^{W}_t = (1-\omega)\, P^W_t.
+\end{equation}
+
+They pay the static price for alternatives to lumber. They receive revenue based on their output. They choose $W^{\theta}_t$ and $\Phi^{\theta}_t$ to maximize output.
+\begin{equation}\label{eq:construction_cost}
+Y^F_t = \mathcal{P}^{W}_t\, W_t + P^\Psi_t\, \Psi_t.
+\end{equation}
+
+The government pays the lumber subsidy based on the set rate $\omega$. They only pay this subsidy on the portion of lumber which is used as in input for the construction firms.
+\begin{equation}\label{eq:gov_spending}
+G_t = \omega\, P^W_t\, W_t.
+\end{equation}
+
+The government pays for this policy by collecting a lump sum tax on the consumers. Such that their budget is balanced.
+
+
+The households will provide labour and capital to the sawmills firms. They will earn income on their provided capital and labour which they will spend on consumption, investment, and lump sum transfers to the government.
+
+\paragraph{Budget constraint}
+\begin{equation}\label{eq:hh_budget}
+C_t + K_{t+1} = w_t L_t + r_t K_t - T_t.
+\end{equation}
+
+The households will derive utility from leisure and consumption of the final good. The utility function has been defined as a summation of logs. Where $\gamma$ represents the preference weight between the two goods.
+\paragraph{Preferences}
+\begin{equation}\label{eq:hh_utility}
+U = \log(C_t) + \gamma \log(1-L_t).
+\end{equation}
+
+At each time step the consumer will make the choice between consumption and investment based on the Euler equation.
+\begin{equation}
+\frac{1}{C_t}
+= \beta \frac{1}{C_{t+1}} (r_{t+1} + 1 - \delta).
+\end{equation}
+They additionally will choose how much to work and consume based on the given wage.
+\begin{equation}
+\frac{\gamma C_t}{1-L_t}
+= w_t.
+\end{equation}
+
+In order to model export demand, an additional exogenous variable $X$ will be defined. This will be used to simulate shocks due to tariffs. 
+
+\end{document}
