@@ -1,0 +1,268 @@
+\documentclass[12pt,a4paper]{article}
+
+% Math and symbols
+\usepackage{amsmath,amssymb,amsthm}
+
+% Formatting
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{parskip}
+
+% Tables and floats
+\usepackage{float}
+
+% Hyperlinks
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\begin{document}
+
+\doublespacing
+
+\section{Appendix}
+\subsection{Model}
+\subsubsection{Model Definition}
+\paragraph{Sawmill Firms}
+\noindent\newline
+\textbf{Table 1: Notation for Sawmill Firms}
+\vspace{0.6em}
+
+\noindent
+\begin{tabular}{@{}llp{8cm}@{}}
+\hline
+\noalign{\vskip 0.2em}
+\textbf{} & \textbf{Symbol} & \textbf{Description} \\
+\hline
+\noalign{\vskip 0.4em}
+\textbf{Variables} 
+& $Y^W$ & Lumber output \\
+& $K$   & Capital input to sawmill firms \\
+& $L$   & Labour input to sawmill firms \\[0.8em]
+
+\textbf{Prices}
+& $r$   & Rental rate of capital \\
+& $w$   & Wage rate of labour \\
+& $P^W$ & Price of lumber \\[0.8em]
+
+\textbf{Parameters}
+& $A^S$    & Technology parameter for sawmill firms \\
+& $\alpha$ & Capital share parameter, $\alpha \in (0,1)$ \\
+\hline
+\end{tabular}
+
+\vspace{1em}
+
+
+\paragraph{Production Function:}
+\begin{equation}\label{eq:sawmill_prod}
+Y^W_t = A^S K_t^{\alpha} L_t^{1-\alpha}
+\end{equation}
+
+\paragraph{Budget Constraint:}
+\begin{equation}\label{eq:sawmill_bc}
+TC = r_t K_t + w_t L_t
+\end{equation}
+
+\paragraph{Construction Firms}
+\noindent\newline
+\textbf{Table 2: Notation for Construction Firms}
+\vspace{0.6em}
+
+\noindent
+\begin{tabular}{@{}llp{8cm}@{}}
+\hline
+\noalign{\vskip 0.2em}
+\textbf{} & \textbf{Symbol} & \textbf{Description} \\
+\hline
+\noalign{\vskip 0.4em}
+\textbf{Variables}
+& $Y^F$ & Final output produced by construction firms \\
+& $W$   & Lumber input used in construction \\
+& $\Psi$ & Alternative inputs to lumber \\[0.8em]
+
+\textbf{Prices}
+& $\mathcal{P}^W$ & Effective price of lumber \\
+& $P^\Psi$ & Price of alternative inputs \\[0.8em]
+
+\textbf{Parameters}
+& $A^C$ & Technology parameter for construction firms \\
+& $\theta$ & Input share or scaling parameter in construction production \\
+& $\phi$ & Elasticity of substitution between lumber and alternatives \\
+\hline
+\end{tabular}
+
+\vspace{1em}
+
+\paragraph{Production}
+\begin{equation}\label{eq:construction_prod}
+Y^F_t = A^C\left(\theta\, W_t^{\phi} + (1-\theta)\, \Psi_t^{\phi}\right)^{1/\phi}.
+\end{equation}
+
+\paragraph{Cost}
+\begin{equation}\label{eq:construction_cost}
+TC^C_t = \mathcal{P}^{W}_t\, W_t + P^\Psi_t\, \Psi_t.
+\end{equation}
+
+\paragraph{Effective price of lumber}
+\begin{equation}\label{eq:effective_lumber_price}
+\mathcal{P}^{W}_t = (1-\omega)\, P^W_t.
+\end{equation}
+
+\paragraph{Government}
+\noindent\newline
+\textbf{Table 3: Notation for Government}
+\vspace{0.6em}
+
+\noindent
+\begin{tabular}{@{}llp{8cm}@{}}
+\hline
+\noalign{\vskip 0.2em}
+\textbf{} & \textbf{Symbol} & \textbf{Description} \\
+\hline
+\noalign{\vskip 0.4em}
+\textbf{Variables}
+& $G$ & Government expenditure on lumber tax credits \\[0.8em]
+
+\textbf{Policy Instruments}
+& $T$ & Lump-sum tax levied on households \\
+& $\omega$ & Tax credit rate applied to lumber inputs \\
+\hline
+\end{tabular}
+
+\vspace{1em}
+
+\paragraph{Lumber tax credit expenditure}
+\begin{equation}\label{eq:gov_spending}
+G_t = \omega\, P^W_t\, W_t.
+\end{equation}
+
+\paragraph{Government budget constraint}
+\begin{equation}\label{eq:gov_budget}
+G_t = T_t.
+\end{equation}
+
+\paragraph{Households}
+\noindent\newline
+\textbf{Table 4: Notation for Households}
+\vspace{0.6em}
+
+\noindent
+\begin{tabular}{@{}llp{8cm}@{}}
+\hline
+\noalign{\vskip 0.2em}
+\textbf{} & \textbf{Symbol} & \textbf{Description} \\
+\hline
+\noalign{\vskip 0.4em}
+\textbf{Variables}
+& $C$ & Consumption of the final good \\
+& $L$ & Labour supplied by the household \\[0.8em]
+
+\textbf{Parameters}
+& $\gamma$ & Preference weight on leisure in utility \\
+\hline
+\end{tabular}
+
+\vspace{1em}
+
+\paragraph{Preferences}
+\begin{equation}\label{eq:hh_utility}
+U = \log(C_t) + \gamma \log(1-L_t).
+\end{equation}
+
+\paragraph{Budget constraint}
+\begin{equation}\label{eq:hh_budget}
+C_t + K_{t+1} = w_t L_t + r_t K_t - T_t.
+\end{equation}
+
+\paragraph{External Demand}
+\noindent\newline
+\textbf{Table 5: Notation for External Demand}
+\vspace{0.6em}
+
+\noindent
+\begin{tabular}{@{}llp{8cm}@{}}
+\hline
+\noalign{\vskip 0.2em}
+\textbf{} & \textbf{Symbol} & \textbf{Description} \\
+\hline
+\noalign{\vskip 0.4em}
+\textbf{Variables}
+& $X$ & External demand for lumber \\ 
+\hline
+\end{tabular}
+
+\vspace{1em}
+
+\subsubsection{Market Clearing Conditions}
+\begin{table}[H]
+\centering
+\caption{Notation for Market Clearing Conditions}
+\vspace{0.6em}
+\begin{tabular}{@{}llp{8cm}@{}}
+\hline
+\noalign{\vskip 0.2em}
+\textbf{} & \textbf{Symbol} & \textbf{Description} \\
+\hline
+\noalign{\vskip 0.4em}
+\textbf{Markets}
+& $Y^W$ & Lumber market clearing output \\
+& $Y^F$ & Final goods market clearing output \\
+& $L$   & Labour market clearing quantity \\
+\hline
+\end{tabular}
+\end{table}
+
+Market clearing in each sector requires:
+\begin{align}
+Y^W &= W + X, \label{eq:lumber_market} \\
+Y^F &= C,     \label{eq:final_market} \\
+L   &= L^D.   \label{eq:labour_market}
+\end{align}
+
+\subsubsection{First Order Conditions}
+\paragraph{Households}
+\noindent\newline
+The household chooses $\{C_t, L_t, K_{t+1}\}_{t=0}^{\infty}$ to maximize
+\eqref{eq:hh_utility} subject to \eqref{eq:hh_budget}. The first-order conditions are:
+\begin{align}
+\frac{1}{C_t} &= \lambda_t, \label{eq:hh_foc_c} \\[0.4em]
+\frac{\gamma}{1 - L_t} &= \lambda_t w_t, \label{eq:hh_foc_l} \\[0.4em]
+\lambda_t &= \beta \lambda_{t+1}(r_{t+1} + 1 - \delta).
+\label{eq:hh_foc_k}
+\end{align}
+
+These conditions imply the Euler equation:
+\begin{equation}
+\frac{1}{C_t}
+= \beta \frac{1}{C_{t+1}} (r_{t+1} + 1 - \delta).
+\end{equation}
+
+\paragraph{Sawmill Firms}
+\noindent\newline
+Sawmill firms choose $K_t$ and $L_t$ to maximize profits given prices. The first-order conditions are:
+\begin{align}
+(1-\alpha) P^W_t A^S K_t^{\alpha} L_t^{-\alpha}
+&= w_t, \label{eq:sawmill_foc_l} \\[0.4em]
+\alpha P^W_t A^S K_t^{\alpha-1} L_t^{1-\alpha}
+&= r_t. \label{eq:sawmill_foc_k}
+\end{align}
+
+\paragraph{Construction Firms}
+\noindent\newline
+Construction firms choose $W_t$ and $\Psi_t$ to minimize costs subject to
+\eqref{eq:construction_prod}. The first-order conditions are:
+\begin{align}
+\theta A^C
+\left(
+\theta W_t^{\phi} + (1-\theta)\Psi_t^{\phi}
+\right)^{\frac{1}{\phi}-1}
+W_t^{\phi-1}
+&= \mathcal{P}^W_t, \label{eq:const_foc_w} \\[0.6em]
+(1-\theta) A^C
+\left(
+\theta W_t^{\phi} + (1-\theta)\Psi_t^{\phi}
+\right)^{\frac{1}{\phi}-1}
+\Psi_t^{\phi-1}
+&= P^\Psi_t. \label{eq:const_foc_psi}
+\end{align}
+
+\end{document}
