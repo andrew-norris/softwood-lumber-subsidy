@@ -40,14 +40,13 @@ The United States has imposed increasing tariffs on Softwood Lumber Exports from
 \section{Introduction}
 % Introduction content goes here
 \subsection{Weakness in the Softwood Lumber Industry}
-The softwood lumber industry is a prominent part of the Canadian economy. Over the past 20 years it has displayed an inability to self correct against negative demand shocks. Since 1997 Agriculture, Forestry, Fishing and Hunting industries made up an average of 1.94\% \cite{statcan2025gdp}, with Forestry making up 1.2\% on it's own in 2022 \cite{nrcan2025forest_industry}. This has declined slightly in recent years, with the industries only making up 1.76\% in 2024 \cite{statcan2025gdp}. Within Forestry there are many components, however softwood lumber production made up 98\% of lumber production in 2020 .  \cite{statcan2022softwood} In aggregate softwood lumber production has decreased since 2004 \cite{statcan2025lumber_output1}. The industry is declining in output in the long run \cite{statcan2018lumber_output2}.
+The softwood lumber industry is a prominent part of the Canadian economy. Over the past 20 years it has displayed an inability to self correct against negative demand shocks. Since 1997 Agriculture, Forestry, Fishing and Hunting industries made up an average of 1.94\% \cite{statcan2025gdp}, with Forestry making up 1.2\% on it's own in 2022 \cite{nrcan2025forest_industry}. This has declined slightly in recent years, with the industries only making up 1.76\% in 2024 \cite{statcan2025gdp}. Within Forestry there are many components, however softwood lumber production made up 98\% of lumber production in 2020 \cite{statcan2022softwood}. In aggregate softwood lumber production has decreased since 2004 \cite{statcan2025lumber_output1}. The industry is declining in output in the long run \cite{statcan2018lumber_output2}.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.85\textwidth]{./figures/forestry_gdp.png}
-  \caption{Agriculture, Forestry, Fishing and Hunting as Percentage of Total GDP (1997--2024)}
+  \caption{Agriculture, Forestry, Fishing and Hunting as Percentage of Total GDP (1997--2024). Source: \citet{statcan2025gdp}, Table 36-10-0434-03. Notes: Author's calculations.}
   \label{fig:forestry_gdp}
-  % \footnotesize Source: \citet{statcan2025gdp}, Table 36-10-0434-03.
 \end{figure}
 
 When looking at employment levels since 2001 \cite{statcan2025employment}, we can see that there was a large negative shock to employment around the great recession. The sawmill industry has been unable to meaningful recover it's employment levels since then \cite{statcan2025employment}. While it has seen an increase in output per worker, it has not made up for the overall lack of labour inputs to the sector.
@@ -55,7 +54,7 @@ When looking at employment levels since 2001 \cite{statcan2025employment}, we ca
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.85\textwidth]{./figures/employment.png}
-  \caption{Sawmill Employment (2021--2024)}\label{fig:employment}
+  \caption{Sawmill Employment (2021--2024). Source: \citet{statcan2025employment}, Table 14-10-0202-01}\label{fig:employment}
 \end{figure}
 
 [did the sawmills shut down and is that why employment failed to recover]
@@ -67,14 +66,14 @@ Despite the declining output, sawmills have seen large spikes in revenue in the 
   \begin{minipage}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{./figures/lumber_output_graph.png}
-    \caption{Lumber Production (2003--2025)}
+    \caption{Lumber Production (2003--2025). Source: \citet{statcan2018lumber_output2}, Table 16-10-0017-01, Table 16-10-0045-01.}
     \label{fig:output}
   \end{minipage}
   \hfill
   \begin{minipage}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{./figures/productivity_analysis.png}
-    \caption{Sawmill Productivity Index (2004--2024)}\label{fig:productivity}
+    \caption{Sawmill Productivity Index (2004--2024), Source: \citet{statcan2018lumber_output2}, Table 16-10-0017-01, Table 16-10-0045-01, Table 14-10-0202-01. Notes: Author's calculations}\label{fig:productivity}
   \end{minipage}
 \end{figure}
 
@@ -92,7 +91,7 @@ The softwood lumber industry is particularly reliant on exports to the United St
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.85\textwidth]{./figures/housing_exports_comparison.png}
-  \caption{US Housing Starts vs Canadian Lumber Exports (2000--2024)}
+  \caption{US Housing Starts vs Canadian Lumber Exports (2000--2024). Sources: \citet{statcan2021exports}, Table 16-10-0045-01. \citet{fred2025housing}. Notes: Author's calculations}
   \label{fig:housing_exports}
 \end{figure}
 
@@ -106,21 +105,21 @@ From 2006 to 2015 lumber trade between the US and Canada was governed by the Sof
 
 Following the end of this agreement, there was no deal in place, meaning no tariffs, export quotas, or export taxes. This period corresponded with the a local peak in lumber production \cite{statcan2025lumber_output1}. 
 
-Since 2017 the correlation between US housing starts and lumber exports has shown increased residuals [TODO]. Indicating that housing starts are no longer an accurate indicator of export demand for softwood lumber in the United States. This implies that an increase in housing starts in the US will not correspond strongly with increased production or employment in the industry.
+Since 2017 the correlation between US housing starts and lumber exports has shown increased residuals as seen in Figure~\ref{fig:housing_residuals}. Indicating that housing starts are no longer an accurate indicator of export demand for softwood lumber in the United States. This implies that an increase in housing starts in the US will not correspond strongly with increased production or employment in the industry.
 
 \begin{figure}[H]
   \centering
   \begin{minipage}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{./figures/housing_exports_scatter.png}
-    \caption{Linear Regression: Housing Starts vs Lumber Exports}
+    \caption{Linear Regression: Housing Starts vs Lumber Exports. Sources: \citet{statcan2021exports}, Table 16-10-0045-01. \citet{fred2025housing}. Notes: Author's calculations}
     \label{fig:housing_scatter}
   \end{minipage}
   \hfill
   \begin{minipage}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{./figures/housing_exports_residuals.png}
-    \caption{Residual Plot Over Time}
+    \caption{Residual Plot Over Time. Sources: \citet{statcan2021exports}, Table 16-10-0045-01. \citet{fred2025housing}. Notes: Author's calculations}
     \label{fig:housing_residuals}
   \end{minipage}
 \end{figure}
@@ -132,11 +131,11 @@ These rates took effect in 2017, and have been under annual review since then \c
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.85\textwidth]{./figures/tariff_timeline.png}
-  \caption{US Weighted Tariff Rate on Canadian Softwood Lumber (2017--2025)}
+  \caption{US Weighted Tariff Rate on Canadian Softwood Lumber (2017--2025) Source: \citet{bcgov2025tariff}. \citet{forestnet2024production}. Notes: Author's calculations; see Appendix~\ref{app:effective_rate}}
   \label{fig:tariff_timeline}
 \end{figure}
 
-While these rates varied slightly from 2017 to 2025, they have spiked upwards this year with the re-election of Donald Trump [TODO]. It is hard to assess the full impact of these tariffs, but with the anti-dumping rates almost tripling this year [TODO], they must be considered when looking forward in the softwood lumber industry.
+While these rates varied slightly from 2017 to 2025, they have spiked upwards this year with the re-election of Donald Trump \cite{bcgov2025tariff}. It is hard to assess the full impact of these tariffs, but with the anti-dumping rates almost tripling this year \cite{bcgov2025tariff}, they must be considered when looking forward in the softwood lumber industry.
 
 \subsection{Inducing Domestic Demand through Subsidies}
 In the face of these increased tariffs, there is a risk that the industry will face another negative demand shock that it cannot recover from. 
@@ -148,20 +147,22 @@ This is in line with Prime Minister Mark Carney's proposals to offer loans to sa
 
 [housing starts in canada?]
 
-In 2024 the construction industry contributed \$165 Billion to Canadian GDP \cite{statcan2025gdp}, compared to \$40 Billion by the entire Agriculture, Forestry, Fishing and Hunting industries \cite{statcan2025gdp}. The scale of this industry makes it a strong target for inducing demand in the much smaller lumber industry. 
+In 2024 the construction industry contributed \$165 Billion to Canadian GDP \cite{statcan2025gdp}, compared to \$40 Billion by the entire agriculture, forestry, fishing and hunting industries \cite{statcan2025gdp}. The scale of this industry makes it a strong target for inducing demand in the much smaller lumber industry. 
 
-Construction firms can often substitute between concrete, steel, and lumber for different projects depending on prices [TODO]. And while there was a large spike in lumber prices around covid 2019 [TODO], it's price is now closely comparable to ready mix concrete when indexed from 2010 prices [TODO]. This gives the government the opportunity to make lumber a more appealing material for construction by lowering its real price to be in line with steel and concrete.
+Construction firms can often substitute between concrete, steel, and lumber for different projects depending on prices [TODO]. Figure~\ref{fig:material_comparison} shows a large spike in lumber prices around covid 2019, and that its current price is now closely comparable to ready mix concrete when indexed from 2010 prices \cite{statcan2025prices}. This gives the government the opportunity to make lumber a more appealing material for construction by lowering its real price to be in line with steel and concrete.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.85\textwidth]{./figures/material_comparison.png}
-  \caption{Construction Material Price Indices (2003--2025)}
+  \caption{Construction Material Price Indices (2003--2025). Source: \citet{statcan2025prices}, Table 18-10-0266-01. Notes: Author's calculations.}
   \label{fig:material_comparison}
 \end{figure}
 
 \section{Literature Review}
 
-This paper runs calibration much like is outlined in [CALIBRATION PAPER]
+This paper relies on previous knowledge of DSGE models, and the techniques for adjusting them to the specific use cases. \citet{gomme2015calibration} outlines the method of calibration for DSGE models which will be attempted to be recreated in this paper. A methodology for extending the standard DSGE model to include intermediary goods can be found in \citet{christiano2005dsge}.
+
+For general background on the lumber dispute between the United States on Canada, there are two recommended papers. \citet{vankooten2002sla} covers the original SLA, and more historical background on the trade dispute. \citet{hoover2017sla_crs} is about the effects and details of the SLA aggreement in place from 2006-2015.
 
 \section{Theoretical Model}
 
@@ -513,6 +514,7 @@ W_t^{\phi-1}
 \end{align}
 
 \subsection{Effective Tariff Rate}
+\label{app:effective_rate}
 \paragraph{Calculating the Rate}
 \noindent\newline
 The effective U.S. tariff rate on Canadian softwood lumber is constructed as a
@@ -548,9 +550,9 @@ All remaining Canadian softwood lumber producers & 0.602 \\[0.6em]
 \end{tabular}
 \end{table}
 
-Tariff rates are calculated based on the dates of actions taken as part of the Annual Reviews (AR) 1 through 6 [TODO]. Constant weights were used for this paper based on 2023 export quantities [TODO]. After AR3, resolute was not given individual tariff rates [TODO]. After AR5 J.D. Irving was not given individual tariff rates [TODO].
+Tariff rates are calculated based on the dates of actions taken as part of the Annual Reviews (AR) 1 through 6 \cite{bcgov2025tariff}. Constant weights were used for this paper based on 2023 export quantities \cite{forestnet2024production}. After AR3, resolute was not given individual tariff rates \cite{bcgov2025tariff}. After AR5 J.D. Irving was not given individual tariff rates \cite{bcgov2025tariff}.
 
-\bibliographystyle{plain}
+\bibliographystyle{plainnat}
 \bibliography{references}
 
 \end{document}
