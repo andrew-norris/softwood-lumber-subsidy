@@ -265,4 +265,41 @@ W_t^{\phi-1}
 &= P^\Psi_t. \label{eq:const_foc_psi}
 \end{align}
 
+\subsection{Effective Tariff Rate}
+\paragraph{Calculating the Rate}
+The effective U.S. tariff rate on Canadian softwood lumber is constructed as a
+firm-weighted average of countervailing and anti-dumping duties:
+\begin{equation}
+\tau_t = \sum_{i \in \mathcal{F}} \omega_i \tau_{i,t},
+\end{equation}
+where $\tau_{i,t}$ denotes the tariff rate applied to firm $i$ at time $t$, and
+$\omega_i$ is firm $i$'s share of Canadian softwood lumber production.
+
+\paragraph{Export Weights}
+\begin{table}[H]
+\centering
+\caption{Production Weights Used in the Construction of the Effective Tariff Rate}
+\label{tab:tariff_weights}
+\vspace{0.6em}
+\begin{tabular}{@{}p{12cm}c@{}}
+\hline
+\noalign{\vskip 0.2em}
+\textbf{Firm} & \textbf{Weight} \\
+\hline
+\noalign{\vskip 0.4em}
+West Fraser Timber Co. Ltd. & 0.136 \\
+Canfor Corporation & 0.111 \\
+Resolute Forest Products & 0.096 \\
+J.D. Irving, Limited & 0.055 \\
+All remaining Canadian softwood lumber producers & 0.602 \\[0.6em]
+\hline
+\noalign{\vskip 0.2em}
+\textbf{Total} & \textbf{1.000} \\
+\hline
+\end{tabular}
+\end{table}
+
+Tariff rates are calculated based on the dates of actions taken as part of the Annual Reviews (AR) 1 through 6. Constant weights were used for this paper based on 2023 export quantities. After AR3, resolute was not given individual tariff rates. After AR5 J.D. Irving was not given individual tariff rates.
+
+
 \end{document}
