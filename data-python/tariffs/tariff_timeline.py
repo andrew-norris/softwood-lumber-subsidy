@@ -50,7 +50,7 @@ if trump_elected >= plot_df['Date'].min() and trump_elected <= plot_df['Date'].m
     ax.axvline(x=trump_elected, color='#999999', linestyle='-.', alpha=0.8, linewidth=2, label='Trump Elected (Nov 2016)')
 
 if trump_reelected >= plot_df['Date'].min() and trump_reelected <= plot_df['Date'].max():
-    ax.axvline(x=trump_reelected, color='#CCCCCC', linestyle='-.', alpha=0.8, linewidth=2, label='Trump Reelected (Nov 2024)')
+    ax.axvline(x=trump_reelected, color='#333333', linestyle='-.', alpha=0.8, linewidth=2, label='Trump Reelected (Nov 2024)')
 
 # Add legend
 ax.legend(loc='upper left', fontsize=17, framealpha=0.9)

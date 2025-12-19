@@ -53,7 +53,7 @@ dates_filtered = dates[mask]
 prices_filtered = prices[mask]
 
 # Create the plot
-fig, ax = plt.subplots(figsize=(16, 8))
+fig, ax = plt.subplots(figsize=(12, 7))
 
 # Plot the data
 ax.plot(dates_filtered, prices_filtered, linewidth=1.5, color='black', alpha=0.8)
