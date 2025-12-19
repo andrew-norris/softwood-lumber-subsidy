@@ -245,13 +245,14 @@ In 2016 there were notariffs, export taxes, or quotas \cite{cbp2025softwood}. Th
 \textbf{Parameter} & \textbf{Value} & \textbf{Description} \\
 \hline
 \noalign{\vskip 0.4em}
-$L$ & $1/3$ & Time spent working \\
-$i^*$ & $1.97\%$ & Real net interest rate \\
+$L$ & $0.33$ & Time spent working \\
+$i^*$ & $0.0197$ & Real net interest rate \\
 $\delta$ & $0.0348$ & Depreciation rate \\
 $\alpha$ & $0.653$ & Capital share of income\\
+$\omega$ & $0$ & Initial subsidy level \\
 \hline
 \end{tabular}
-\caption{Sources: \citet{pwt2025}. \citet{ceic2025interest_rates}. Notes: $L$ chosen by author. $\alpha$ calculations defined in Appendix~\ref{app:capital_share}}
+\caption{Sources: \citet{pwt2025}. \citet{ceic2025interest_rates}. Notes: $L$ and $\omega$ chosen by author. $\alpha$ calculations defined in Appendix~\ref{app:capital_share}}
 \end{table}
 
 From these values, and the Euler in steady state. We can calculate $\beta\approx0.98$.
@@ -260,6 +261,46 @@ From these values, and the Euler in steady state. We can calculate $\beta\approx
 \label{eq:ss_euler}
 \end{equation}
 
+In calibrating $\phi$, research was conducted into the cross price elasticity between lumber, steel and concrete. In \cite{shahi2020sustainablewood}, the cross price elasticities were calculated to be negative. Implying that the value selected for the CES function should be low. For the purpose of this paper, $\phi=1$ was selected. While substitutability was not identified as large, this could be due to aggregate demand across the industry increasing all material usage when housing starts are high. This does not dispute the fact that lowering the price of lumber will increase its usage in the construction industry as is shown in \cite{shahi2020sustainablewood}.
+
+Based on the value of exports given by \cite{statcan2022softwood}, this paper has normalized $Y^W=1$, $X=0.67$, $W=0.33$ as its steady state values for the share of lumber output.
+
+\begin{equation}
+  Y^W = W + X, \label{eq:lumber_market} \\
+\end{equation}
+
+
+
+From \cite{statcan2025capital}, we can get investment in the forestry and lumber industry in 2016 as \$494 Million. In steady state from the law of motion of capital we can calculate capital stock as $K=\$14,200$ Million.
+\begin{equation}
+  K = \frac{I}{\delta}
+\end{equation}
+
+From \cite{statcan2025gdp_detail} we can get the GDP contribution from the forestry and logging industry as \$4,592 Million. Given this we can calculate a $\frac{K}{Y}$ ratio and then normalize to $Y=1$ to get $K\approx3.09$
+
+From the sawmill firm's first order condition with respect to capital we can derive.
+\begin{align}
+\alpha P^W A^S K^{\alpha-1} L^{1-\alpha}
+&= r, \\[0.4em]
+P^W &= \frac{rK}{\alpha}, \\[0.4em]
+P^W &\approx 0.258
+\end{align}
+
+From the sawmill firm's first order condition with respect to labour we can derive.
+
+\begin{align}
+(1-\alpha) P^W A^S K^{\alpha} L^{-\alpha}
+&= w, \\[0.4em]
+w &\approx 0.269
+\end{align}
+
+From the intratemporal labour leisure tradeoff we can calculate $\gamma$.
+\begin{align}
+\frac{\gamma C}{1-L}
+&= w.\\[0.4em]
+\gamma &= \frac{w(1-L)}{C}\\[0.4em]
+\gamma &\approx 0.179
+\end{align}
 
 
 
@@ -479,7 +520,7 @@ C_t + K_{t+1} = w_t L_t + r_t K_t - T_t.
 
 Market clearing in each sector requires:
 \begin{align}
-Y^W &= W + X, \label{eq:lumber_market} \\
+Y^W &= W + X, \ref{eq:lumber_market} \\
 Y^F &= C,     \label{eq:final_market} \\
 L   &= L^D.   \label{eq:labour_market}
 \end{align}
