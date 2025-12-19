@@ -67,6 +67,14 @@ ax.set_ylabel('Price Index (January 2020 = 100)', fontsize=20)
 # Format the axes
 ax.grid(True, alpha=0.3, linestyle='--', color='gray')
 
+# Add COVID marker
+covid_date = pd.to_datetime('2020-03-01')
+if covid_date >= dates_filtered[0] and covid_date <= dates_filtered[-1]:
+    ax.axvline(x=covid_date, color='#666666', linestyle=':', alpha=0.8, linewidth=2, label='COVID-19 Pandemic (Mar 2020)')
+
+# Add legend
+ax.legend(loc='upper left', fontsize=17, framealpha=0.9)
+
 # Format the plot
 plt.xticks(rotation=45, ha='right')
 plt.tight_layout()

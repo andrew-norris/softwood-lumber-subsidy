@@ -31,6 +31,16 @@ plt.title('Employment in Sawmills and Wood Preservation (2001-2024)', fontsize=2
 plt.xlabel('Year', fontsize=18)
 plt.ylabel('Number of Employees (Persons)', fontsize=18)
 plt.grid(True, alpha=0.3, linestyle='--', color='gray')
+
+# Add vertical lines and shaded areas for key events
+plt.axvline(x=2006.75, color='#333333', linestyle='--', alpha=0.8, linewidth=2, label='SLA Start (Oct 2006)')  # Dark gray, dashed
+plt.axvspan(2007, 2009, color='#666666', alpha=0.3, label='Financial Crisis (2007-2009)')  # Shaded area for financial crisis
+plt.axvline(x=2015.75, color='#666666', linestyle=':', alpha=0.8, linewidth=2, label='SLA End (Oct 2015)') # Medium gray, dotted
+plt.axvline(x=2016.75, color='#999999', linestyle='-.', alpha=0.8, linewidth=2, label='Trump Elected (Nov 2016)') # Light gray, dash-dot
+
+# Add legend
+plt.legend(loc='upper right', fontsize=17, framealpha=0.9)
+
 plt.xticks(years[::2], rotation=45)  # Show every other year to avoid crowding
 plt.tight_layout()
 

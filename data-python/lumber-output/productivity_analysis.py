@@ -133,6 +133,15 @@ fig, ax = plt.subplots(figsize=(14, 7))
 # Plot the data
 ax.plot(common_years, productivity_index, linewidth=2, color='black')
 
+# Add vertical lines and shaded areas for key events
+ax.axvline(x=2006.75, color='#333333', linestyle='--', alpha=0.8, linewidth=2, label='SLA Start (Oct 2006)')  # Dark gray, dashed
+ax.axvspan(2007, 2009, color='#666666', alpha=0.3, label='Financial Crisis (2007-2009)')  # Shaded area for financial crisis
+ax.axvline(x=2015.75, color='#666666', linestyle=':', alpha=0.8, linewidth=2, label='SLA End (Oct 2015)') # Medium gray, dotted
+ax.axvline(x=2016.75, color='#999999', linestyle='-.', alpha=0.8, linewidth=2, label='Trump Elected (Nov 2016)') # Light gray, dash-dot
+
+# Add legend
+ax.legend(loc='upper left', fontsize=17, framealpha=0.9)
+
 # Add title and labels
 ax.set_title('Sawmill Productivity Index: Output per Worker (2004 = 100)', 
              fontsize=21, fontweight='bold', pad=20)

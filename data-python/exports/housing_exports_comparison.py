@@ -65,6 +65,9 @@ ax.plot(df['Year'], df['Exports_Index'], linewidth=2, color='gray', linestyle='-
 # Add horizontal line at 100 (base year)
 ax.axhline(y=100, color='black', linestyle=':', linewidth=1, alpha=0.5)
 
+# Add vertical lines and shaded areas for key events
+ax.axvspan(2007, 2009, color='#666666', alpha=0.3, label='Financial Crisis (2007-2009)')  # Shaded area for financial crisis
+
 # Add title and labels
 ax.set_title(f'US Housing Starts vs Canadian Lumber Exports ({df["Year"].min()}=100)', 
              fontsize=24, fontweight='bold', pad=20)

@@ -86,6 +86,16 @@ fig, ax = plt.subplots(figsize=(16, 8))
 # Plot the data
 ax.plot(sorted_dates, sorted_values, linewidth=1.5, color='black', alpha=0.8)
 
+# Add vertical lines for key events
+# Add vertical lines and shaded areas for key events
+ax.axvline(x=pd.to_datetime('2006-10-01'), color='#333333', linestyle='--', alpha=0.8, linewidth=2, label='SLA Start (Oct 2006)')  # Dark gray, dashed
+ax.axvspan(pd.to_datetime('2007-01-01'), pd.to_datetime('2009-12-31'), color='#666666', alpha=0.3, label='Financial Crisis (2007-2009)')  # Shaded area
+ax.axvline(x=pd.to_datetime('2015-10-01'), color='#666666', linestyle=':', alpha=0.8, linewidth=2, label='SLA End (Oct 2015)')  # Medium gray, dotted
+ax.axvline(x=pd.to_datetime('2016-11-01'), color='#999999', linestyle='-.', alpha=0.8, linewidth=2, label='Trump Elected (Nov 2016)')  # Light gray, dash-dot
+
+# Add legend
+ax.legend(loc='upper right', fontsize=17, framealpha=0.9)
+
 # Add title and labels
 ax.set_title('Total Lumber Production in Canada (2003-2025)', fontsize=24, fontweight='bold', pad=20)
 ax.set_xlabel('Year', fontsize=20)

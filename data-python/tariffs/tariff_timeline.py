@@ -36,6 +36,25 @@ fig, ax = plt.subplots(figsize=(16, 8))
 # Plot the tariff rate
 ax.plot(plot_df['Date'], plot_df['Weighted_Tariff'] * 100, linewidth=2, color='black')
 
+# Add vertical lines and shaded areas for key events
+financial_crisis_start = pd.to_datetime('2007-01-01')
+financial_crisis_end = pd.to_datetime('2009-12-31')
+trump_elected = pd.to_datetime('2016-11-01')
+trump_reelected = pd.to_datetime('2024-11-01')
+
+# Check if events fall within our time range and add them
+if financial_crisis_start >= plot_df['Date'].min() and financial_crisis_end <= plot_df['Date'].max():
+    ax.axvspan(financial_crisis_start, financial_crisis_end, color='#666666', alpha=0.3, label='Financial Crisis (2007-2009)')
+
+if trump_elected >= plot_df['Date'].min() and trump_elected <= plot_df['Date'].max():
+    ax.axvline(x=trump_elected, color='#999999', linestyle='-.', alpha=0.8, linewidth=2, label='Trump Elected (Nov 2016)')
+
+if trump_reelected >= plot_df['Date'].min() and trump_reelected <= plot_df['Date'].max():
+    ax.axvline(x=trump_reelected, color='#CCCCCC', linestyle='-.', alpha=0.8, linewidth=2, label='Trump Reelected (Nov 2024)')
+
+# Add legend
+ax.legend(loc='upper left', fontsize=17, framealpha=0.9)
+
 # Add title and labels
 ax.set_title('US Weighted Tariff Rate on Canadian Softwood Lumber (2017-2025)', 
              fontsize=24, fontweight='bold', pad=20)

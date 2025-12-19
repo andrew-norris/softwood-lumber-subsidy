@@ -77,6 +77,23 @@ Despite the declining output, sawmills have seen large spikes in revenue in the 
 
 Despite the falling employment and production, the industry saw a large spike in revenue around 2021. This was correlated with a massive price spike in lumber. This massive spike in revenue would be expected to be correlated with a long term decaying increase in production and employment in order to take advantage of the price opportunities. 
 
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{./figures/sawmill_revenue_graph.png}
+    \caption{Sawmill Revenue. Sources: \citet{statcan2023revenue}, Table 16-10-0117-01.}
+    \label{fig:sawmill_revenue}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{./figures/lumber_price_graph.png}
+    \caption{Indexed lumber prices. Sources: \citet{statcan2025prices}, Table 18-10-0266-01.}
+    \label{fig:lumber_prices}
+  \end{minipage}
+\end{figure}
+
 However this recovery in employment never came. Showing that the lumber industry in Canada can not self correct to its pre financial crisis levels of production and employment, even given massive price spikes in its output goods. 
 
 This suggests that the industry is unable to self correct. Given the possibility of additional negative demand shocks on exports, the industry needs to find a way to make up for the losses in a way that domestic demand currently cannot. This is possibly due to the many natural challenges the industry faces, such as wildfires and mountain pine beetles \cite{statcan2022softwood}.
@@ -91,7 +108,7 @@ The softwood lumber industry is particularly reliant on exports to the United St
   \label{fig:housing_exports}
 \end{figure}
 
-Historically the demand for softwood lumber in the US has been correlated with the number of housing starts in the US \cite{fred2025housing} \cite{statcan2025lumber_output1} \cite{statcan2018lumber_output2}. When housing starts fell in 2006-2009 during the financial crisis in the United States [TODO], employment in the sawmill industry also fell sharply. Since then employment has sat steady at ~50\% of its peaks \cite{statcan2025employment}. Even as US housing starts have recovered, this was not correlated with an increase in employment in the industry
+Historically the demand for softwood lumber in the US has been correlated with the number of housing starts in the US \cite{fred2025housing} \cite{statcan2025lumber_output1} \cite{statcan2018lumber_output2}. When housing starts fell in 2006-2009 during the financial crisis in the United States (Figure~\ref{fig:housing_exports}), employment in the sawmill industry also fell sharply. Since then employment has sat steady at ~50\% of its peaks \cite{statcan2025employment}. Even as US housing starts have recovered, this was not correlated with an increase in employment in the industry
 
 While employment had not recovered, from 2010 to 2016 there was a resurgence in sawmill production \cite{statcan2025lumber_output1}~\cite{statcan2018lumber_output2}, mirroring the increase in housing starts in the US. This was mostly driven by an increase in output per worker. Showing that the industry has been stabilized in the past by this demand by the United States.
 
@@ -226,8 +243,6 @@ They additionally will choose how much to work and consume based on the given wa
 \end{equation}
 
 In order to model export demand, an additional exogenous variable $X$ will be defined. This will be used to simulate shocks due to tariffs.
-
-\newpage
 
 \section{Appendix}
 \subsection{Model}
