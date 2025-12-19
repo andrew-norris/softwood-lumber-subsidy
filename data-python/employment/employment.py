@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Read the CSV file
-df = pd.read_csv('1410020201-eng.csv', skiprows=10)
+df = pd.read_csv('employment/1410020201-eng.csv', skiprows=10)
 
 # Extract the sawmills and wood preservation row
 sawmills_row = df[df.iloc[:, 0] == 'Sawmills and wood preservation  [3211]']
@@ -27,13 +27,13 @@ for val in values:
 # Create the line graph
 plt.figure(figsize=(12, 6))
 plt.plot(years, cleaned_values, linewidth=2, color='black')
-plt.title('Employment in Sawmills and Wood Preservation (2001-2024)', fontsize=14, fontweight='bold')
-plt.xlabel('Year', fontsize=12)
-plt.ylabel('Number of Employees (Persons)', fontsize=12)
+plt.title('Employment in Sawmills and Wood Preservation (2001-2024)', fontsize=21, fontweight='bold')
+plt.xlabel('Year', fontsize=18)
+plt.ylabel('Number of Employees (Persons)', fontsize=18)
 plt.grid(True, alpha=0.3, linestyle='--', color='gray')
 plt.xticks(years[::2], rotation=45)  # Show every other year to avoid crowding
 plt.tight_layout()
 
 # Save the plot to images folder
-plt.savefig('../../images/employment.png', dpi=300, bbox_inches='tight')
+plt.savefig('../images/employment.png', dpi=300, bbox_inches='tight')
 plt.close()

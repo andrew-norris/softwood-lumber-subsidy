@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Read the CSV file
-df = pd.read_csv('1610011701-eng.csv', skiprows=10)
+df = pd.read_csv('sawmill-revenue/1610011701-eng.csv', skiprows=10)
 
 # Extract the row for "Revenue from goods manufactured"
 revenue_row = df[df.iloc[:, 0].str.contains('Revenue from goods manufactured', na=False, regex=False)]
@@ -44,9 +44,9 @@ ax.plot(years_filtered, revenue_billions, linewidth=2, color='black')
 
 # Add title and labels
 ax.set_title('Sawmill Revenue from Goods Manufactured in Canada (2013-2023)', 
-             fontsize=14, fontweight='bold', pad=20)
-ax.set_xlabel('Year', fontsize=12)
-ax.set_ylabel('Revenue (billions of dollars)', fontsize=12)
+             fontsize=21, fontweight='bold', pad=20)
+ax.set_xlabel('Year', fontsize=18)
+ax.set_ylabel('Revenue (billions of dollars)', fontsize=18)
 
 # Format the axes
 ax.grid(True, alpha=0.3, linestyle='--', color='gray')
@@ -77,5 +77,5 @@ for i in range(1, len(years_filtered)):
     print(f"{years_filtered[i-1]} to {years_filtered[i]}: {growth_rate:+.1f}%")
 
 # Save the plot to images folder
-plt.savefig('../../images/sawmill_revenue_graph.png', dpi=300, bbox_inches='tight')
+plt.savefig('../images/sawmill_revenue_graph.png', dpi=300, bbox_inches='tight')
 plt.close()

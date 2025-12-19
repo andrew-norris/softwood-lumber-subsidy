@@ -4,7 +4,7 @@ import numpy as np
 from datetime import datetime
 
 # Read employment data
-df_employment = pd.read_csv('../employment/1410020201-eng.csv', skiprows=10)
+df_employment = pd.read_csv('employment/1410020201-eng.csv', skiprows=10)
 
 # Extract sawmill employment row
 sawmill_employment_row = df_employment[df_employment.iloc[:, 0].str.contains(r'Sawmills and wood preservation  \[3211\]', na=False, regex=True)]
@@ -29,8 +29,8 @@ for year_col in [str(year) for year in employment_years]:
 
 # Read lumber output data (from the combined dataset)
 # We'll need to aggregate monthly data to annual
-df_old = pd.read_csv('1610004501-eng.csv', skiprows=9)
-df_new = pd.read_csv('1610001701-eng.csv', skiprows=9)
+df_old = pd.read_csv('lumber-output/1610004501-eng.csv', skiprows=9)
+df_new = pd.read_csv('lumber-output/1610001701-eng.csv', skiprows=9)
 
 # Get date columns and production data
 old_date_columns = [col for col in df_old.columns[1:] if col.strip() and not col.startswith('Unnamed')]
@@ -135,9 +135,9 @@ ax.plot(common_years, productivity_index, linewidth=2, color='black')
 
 # Add title and labels
 ax.set_title('Sawmill Productivity Index: Output per Worker (2004 = 100)', 
-             fontsize=14, fontweight='bold', pad=20)
-ax.set_xlabel('Year', fontsize=12)
-ax.set_ylabel('Productivity Index', fontsize=12)
+             fontsize=21, fontweight='bold', pad=20)
+ax.set_xlabel('Year', fontsize=18)
+ax.set_ylabel('Productivity Index', fontsize=18)
 
 # Add a horizontal line at 100
 ax.axhline(y=100, color='gray', linestyle='--', alpha=0.5, linewidth=1)
@@ -171,5 +171,5 @@ for year, emp, prod, prod_val, idx in zip(common_years, aligned_employment, alig
     print(f"{year}: {idx:6.1f} (Employment: {emp:>6,.0f}, Production: {prod:>7,.0f}, Output/Worker: {prod_val:.2f})")
 
 # Save the plot to images folder
-plt.savefig('../../images/productivity_analysis.png', dpi=300, bbox_inches='tight')
+plt.savefig('../images/productivity_analysis.png', dpi=300, bbox_inches='tight')
 plt.close()

@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Read the CSV file
-df = pd.read_csv('raw-exports.csv', skiprows=3)
+df = pd.read_csv('exports/raw-exports.csv', skiprows=3)
 
 # Filter out rows with missing country data
 df = df[df['Country'].notna()]
@@ -37,18 +37,18 @@ wedges, texts, autotexts = ax.pie(region_totals,
                                     autopct='%1.1f%%',
                                     startangle=90,
                                     colors=colors,
-                                    textprops={'fontsize': 13, 'weight': 'bold'},
+                                    textprops={'fontsize': 20, 'weight': 'bold'},
                                     wedgeprops={'edgecolor': 'black', 'linewidth': 1.5})
 
 # Make percentage text white for better contrast
 for autotext in autotexts:
     autotext.set_color('white')
-    autotext.set_fontsize(14)
+    autotext.set_fontsize(21)
     autotext.set_weight('bold')
 
 # Add title
 ax.set_title('Canadian Softwood Lumber Export Share by Destination\n(January 2017)', 
-             fontsize=16, fontweight='bold', pad=20)
+             fontsize=24, fontweight='bold', pad=20)
 
 plt.tight_layout()
 
@@ -63,5 +63,5 @@ for region in region_totals.index:
     print(f"  {region}: ${value:,.0f} ({pct:.1f}%)")
 
 # Save the plot to images folder
-plt.savefig('../../images/export_share_piechart.png', dpi=300, bbox_inches='tight')
+plt.savefig('../images/export_share_piechart.png', dpi=300, bbox_inches='tight')
 plt.close()

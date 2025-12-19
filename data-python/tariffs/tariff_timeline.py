@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Read the tariff data
-df = pd.read_csv('tariff-weights.csv', encoding='utf-8')
+df = pd.read_csv('tariffs/tariff-weights.csv', encoding='utf-8')
 
 # Convert dates to datetime
 df['start_date'] = pd.to_datetime(df['start_date'])
@@ -38,9 +38,9 @@ ax.plot(plot_df['Date'], plot_df['Weighted_Tariff'] * 100, linewidth=2, color='b
 
 # Add title and labels
 ax.set_title('US Weighted Tariff Rate on Canadian Softwood Lumber (2017-2025)', 
-             fontsize=16, fontweight='bold', pad=20)
-ax.set_xlabel('Year', fontsize=13)
-ax.set_ylabel('Weighted Tariff Rate (%)', fontsize=13)
+             fontsize=24, fontweight='bold', pad=20)
+ax.set_xlabel('Year', fontsize=20)
+ax.set_ylabel('Weighted Tariff Rate (%)', fontsize=20)
 
 # Format the axes
 ax.grid(True, alpha=0.3, linestyle='--', color='gray')
@@ -63,5 +63,5 @@ print(f"Minimum Tariff Rate: {plot_df['Weighted_Tariff'].min()*100:.1f}%")
 print(f"Maximum Tariff Rate: {plot_df['Weighted_Tariff'].max()*100:.1f}%")
 
 # Save the plot to images folder
-plt.savefig('../../images/tariff_timeline.png', dpi=300, bbox_inches='tight')
+plt.savefig('../images/tariff_timeline.png', dpi=300, bbox_inches='tight')
 plt.close()

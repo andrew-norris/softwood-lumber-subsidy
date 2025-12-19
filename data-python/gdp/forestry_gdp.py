@@ -4,7 +4,7 @@ import numpy as np
 
 # Read the CSV file with the correct structure
 # Line 12 (index 11) has the column headers with years
-df = pd.read_csv('3610043403-eng.csv', skiprows=11)
+df = pd.read_csv('gdp/3610043403-eng.csv', skiprows=11)
 
 # The columns are: NAICS description, then years 1997-2025, then empty column
 # Get the year columns (excluding first column and last empty column)
@@ -59,9 +59,9 @@ forestry_percentage_filtered = forestry_percentage[valid_indices]
 plt.figure(figsize=(14, 7))
 plt.plot(years_filtered, forestry_percentage_filtered, linewidth=2, color='black')
 plt.title('Agriculture, Forestry, Fishing and Hunting as % of Total GDP (1997-2024)', 
-          fontsize=14, fontweight='bold')
-plt.xlabel('Year', fontsize=12)
-plt.ylabel('Percentage of Total GDP (%)', fontsize=12)
+          fontsize=21, fontweight='bold')
+plt.xlabel('Year', fontsize=18)
+plt.ylabel('Percentage of Total GDP (%)', fontsize=24)
 plt.grid(True, alpha=0.3, linestyle='--', color='gray')
 plt.xticks(years_filtered[::2], rotation=45)  # Show every other year to avoid crowding
 plt.tight_layout()
@@ -73,7 +73,7 @@ plt.axhline(y=mean_percentage, color='gray', linestyle='--', alpha=0.5,
 plt.legend()
 
 # Save the plot to images folder
-plt.savefig('../../images/forestry_gdp.png', dpi=300, bbox_inches='tight')
+plt.savefig('../images/forestry_gdp.png', dpi=300, bbox_inches='tight')
 plt.close()
 
 # Print summary statistics

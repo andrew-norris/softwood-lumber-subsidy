@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Read the CSV file
-df = pd.read_csv('1810026601-eng.csv', skiprows=9)
+df = pd.read_csv('prices/1810026601-eng.csv', skiprows=9)
 
 # Extract the row for "Softwood lumber"
 lumber_price_row = df[df.iloc[:, 0].str.contains(r'Softwood lumber \(except tongue and groove and other edge worked lumber\)  \[24112\]', na=False, regex=True)]
@@ -60,9 +60,9 @@ ax.plot(dates_filtered, prices_filtered, linewidth=1.5, color='black', alpha=0.8
 
 # Add title and labels
 ax.set_title('Softwood Lumber Price Index in Canada (2003-2025)', 
-             fontsize=16, fontweight='bold', pad=20)
-ax.set_xlabel('Year', fontsize=13)
-ax.set_ylabel('Price Index (January 2020 = 100)', fontsize=13)
+             fontsize=24, fontweight='bold', pad=20)
+ax.set_xlabel('Year', fontsize=20)
+ax.set_ylabel('Price Index (January 2020 = 100)', fontsize=20)
 
 # Format the axes
 ax.grid(True, alpha=0.3, linestyle='--', color='gray')
@@ -90,5 +90,5 @@ for year in years_to_show:
         print(f"January {year}: {jan_value:.1f}")
 
 # Save the plot to images folder
-plt.savefig('../../images/lumber_price_graph.png', dpi=300, bbox_inches='tight')
+plt.savefig('../images/lumber_price_graph.png', dpi=300, bbox_inches='tight')
 plt.close()

@@ -4,10 +4,10 @@ import numpy as np
 from datetime import datetime
 
 # Read the older dataset (2003-2018) - header is at row 10
-df_old = pd.read_csv('1610004501-eng.csv', skiprows=9)
+df_old = pd.read_csv('lumber-output/1610004501-eng.csv', skiprows=9)
 
 # Read the newer dataset (2014-2025) - header is at row 10
-df_new = pd.read_csv('1610001701-eng.csv', skiprows=9)
+df_new = pd.read_csv('lumber-output/1610001701-eng.csv', skiprows=9)
 
 # Get the date columns from headers
 old_date_columns = [col for col in df_old.columns[1:] if col.strip() and not col.startswith('Unnamed')]
@@ -87,9 +87,9 @@ fig, ax = plt.subplots(figsize=(16, 8))
 ax.plot(sorted_dates, sorted_values, linewidth=1.5, color='black', alpha=0.8)
 
 # Add title and labels
-ax.set_title('Total Lumber Production in Canada (2003-2025)', fontsize=16, fontweight='bold', pad=20)
-ax.set_xlabel('Year', fontsize=13)
-ax.set_ylabel('Production (thousands of cubic metres)', fontsize=13)
+ax.set_title('Total Lumber Production in Canada (2003-2025)', fontsize=24, fontweight='bold', pad=20)
+ax.set_xlabel('Year', fontsize=20)
+ax.set_ylabel('Production (thousands of cubic metres)', fontsize=20)
 
 # Format the x-axis
 ax.grid(True, alpha=0.3, linestyle='--', color='gray')
@@ -121,5 +121,5 @@ for year in sorted(annual_averages.keys()):
     print(f"{year}: {annual_averages[year]:,.0f} thousand cubic metres")
 
 # Save the plot to images folder
-plt.savefig('../../images/lumber_output_graph.png', dpi=300, bbox_inches='tight')
+plt.savefig('../images/lumber_output_graph.png', dpi=300, bbox_inches='tight')
 plt.close()

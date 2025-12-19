@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Read the value exports CSV file
-df_value = pd.read_csv('value-exports.csv', skiprows=4)
+df_value = pd.read_csv('exports/value-exports.csv', skiprows=4)
 df_value.columns = ['Date', 'Value']
 df_value = df_value[df_value['Date'].notna()]
 df_value = df_value[df_value['Date'].str.contains(r'^[A-Z][a-z]{2}-\d{2}$', na=False)]
@@ -13,7 +13,7 @@ df_value = df_value.dropna()
 df_value = df_value.sort_values('Date')
 
 # Read the volume exports CSV file
-df_volume = pd.read_csv('volume-exports.csv', skiprows=5)
+df_volume = pd.read_csv('exports/volume-exports.csv', skiprows=5)
 df_volume.columns = ['Date', 'Volume']
 df_volume = df_volume[df_volume['Date'].notna()]
 df_volume = df_volume[df_volume['Date'].str.contains(r'^[A-Z][a-z]{2}-\d{2}$', na=False)]
@@ -52,12 +52,12 @@ ax.axhline(y=100, color='black', linestyle=':', linewidth=1, alpha=0.5)
 
 # Add title and labels
 ax.set_title('Softwood Lumber Export Value and Volume Indices (February 2012=100)', 
-             fontsize=16, fontweight='bold', pad=20)
-ax.set_xlabel('Year', fontsize=13)
-ax.set_ylabel('Index (February 2012 = 100)', fontsize=13)
+             fontsize=24, fontweight='bold', pad=20)
+ax.set_xlabel('Year', fontsize=20)
+ax.set_ylabel('Index (February 2012 = 100)', fontsize=20)
 
 # Add legend
-ax.legend(loc='best', fontsize=11, frameon=True, fancybox=False, edgecolor='black')
+ax.legend(loc='best', fontsize=17, frameon=True, fancybox=False, edgecolor='black')
 
 # Format the axes
 ax.grid(True, alpha=0.3, linestyle='--', color='gray')
@@ -86,5 +86,5 @@ for year in years:
         print(f"{year}: Value={annual_value_index[year]:.1f}, Volume={annual_volume_index[year]:.1f}")
 
 # Save the plot to images folder
-plt.savefig('../../images/export_value_graph.png', dpi=300, bbox_inches='tight')
+plt.savefig('../images/export_value_graph.png', dpi=300, bbox_inches='tight')
 plt.close()

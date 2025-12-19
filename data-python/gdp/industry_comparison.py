@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Read the GDP data
-df = pd.read_csv('3610043403-eng.csv', skiprows=11)
+df = pd.read_csv('gdp/3610043403-eng.csv', skiprows=11)
 
 # Find the relevant industries
 industries_to_compare = {
@@ -53,13 +53,13 @@ bars = ax.barh(industry_names, gdp_values, color='black', edgecolor='black', lin
 # Add value labels on the bars
 for i, (name, value) in enumerate(zip(industry_names, gdp_values)):
     ax.text(value + 5000, i, f'${value:,.0f}M', 
-            va='center', fontsize=11, fontweight='bold')
+            va='center', fontsize=22, fontweight='bold')
 
 # Add title and labels
 ax.set_title('Canadian Industry GDP Comparison (2024)', 
-             fontsize=16, fontweight='bold', pad=20)
-ax.set_xlabel('GDP (millions of chained 2017 dollars)', fontsize=13)
-ax.set_ylabel('Industry', fontsize=13)
+             fontsize=24, fontweight='bold', pad=20)
+ax.set_xlabel('GDP (millions of chained 2017 dollars)', fontsize=20)
+ax.set_ylabel('Industry', fontsize=20)
 
 # Extend x-axis to accommodate labels
 ax.set_xlim(0, max(gdp_values) * 1.15)
@@ -104,5 +104,5 @@ forestry_gdp = gdp_values[industry_names.index('Agriculture, forestry, fishing a
 print(f"Construction is {construction_gdp/forestry_gdp:.1f}x larger than Agriculture/Forestry/Fishing/Hunting")
 
 # Save the plot to images folder
-plt.savefig('../../images/industry_comparison.png', dpi=300, bbox_inches='tight')
+plt.savefig('../images/industry_comparison.png', dpi=300, bbox_inches='tight')
 plt.close()

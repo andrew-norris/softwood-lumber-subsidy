@@ -4,7 +4,7 @@ import numpy as np
 from scipy import stats
 
 # Read US housing starts data
-housing = pd.read_csv('../housing-starts/HOUST.csv')
+housing = pd.read_csv('housing-starts/HOUST.csv')
 housing['observation_date'] = pd.to_datetime(housing['observation_date'])
 housing['Year'] = housing['observation_date'].dt.year
 
@@ -13,7 +13,7 @@ annual_housing = housing.groupby('Year')['HOUST'].mean().reset_index()
 annual_housing.columns = ['Year', 'Housing_Starts']
 
 # Read Canadian lumber exports data
-exports = pd.read_csv('1610001801-eng.csv', skiprows=11, nrows=1)
+exports = pd.read_csv('exports/1610001801-eng.csv', skiprows=11, nrows=1)
 
 # The data row has alternating pattern: year header, then 4 empty cols, repeat
 # But the actual data is in one long row
@@ -67,12 +67,12 @@ ax.axhline(y=100, color='black', linestyle=':', linewidth=1, alpha=0.5)
 
 # Add title and labels
 ax.set_title(f'US Housing Starts vs Canadian Lumber Exports ({df["Year"].min()}=100)', 
-             fontsize=16, fontweight='bold', pad=20)
-ax.set_xlabel('Year', fontsize=13)
-ax.set_ylabel(f'Index ({df["Year"].min()} = 100)', fontsize=13)
+             fontsize=24, fontweight='bold', pad=20)
+ax.set_xlabel('Year', fontsize=20)
+ax.set_ylabel(f'Index ({df["Year"].min()} = 100)', fontsize=20)
 
 # Add legend
-ax.legend(loc='best', fontsize=11, frameon=True, fancybox=False, edgecolor='black')
+ax.legend(loc='best', fontsize=17, frameon=True, fancybox=False, edgecolor='black')
 
 # Format the axes
 ax.grid(True, alpha=0.3, linestyle='--', color='gray')
@@ -100,7 +100,7 @@ print(f"Lumber Exports - Min Index: {df['Exports_Index'].min():.1f} ({int(df.loc
 print(f"Lumber Exports - Max Index: {df['Exports_Index'].max():.1f} ({int(df.loc[df['Exports_Index'].idxmax(), 'Year'])})")
 
 # Save the first plot to images folder
-plt.savefig('../../images/housing_exports_comparison.png', dpi=300, bbox_inches='tight')
+plt.savefig('../images/housing_exports_comparison.png', dpi=300, bbox_inches='tight')
 plt.close()
 
 # Calculate correlation
@@ -148,14 +148,14 @@ fig2, ax1 = plt.subplots(figsize=(12, 8))
 ax1.scatter(df['Housing_Starts'], df['Total_Exports'], color='black', s=50, alpha=0.6, edgecolors='black', linewidth=1)
 ax1.plot(df['Housing_Starts'], df['Predicted_Exports'], color='gray', linewidth=2, linestyle='--', 
          label=f'y = {intercept:.0f} + {slope:.2f}x\nR² = {r_value**2:.4f}')
-ax1.set_xlabel('US Housing Starts (thousand units)', fontsize=12)
-ax1.set_ylabel('Canadian Lumber Exports (thousand cubic metres)', fontsize=12)
-ax1.set_title('Linear Regression: Housing Starts vs Lumber Exports', fontsize=14, fontweight='bold')
-ax1.legend(loc='best', fontsize=10, frameon=True, fancybox=False, edgecolor='black')
+ax1.set_xlabel('US Housing Starts (thousand units)', fontsize=20)
+ax1.set_ylabel('Canadian Lumber Exports (thousand cubic metres)', fontsize=20)
+ax1.set_title('Linear Regression: Housing Starts vs Lumber Exports', fontsize=24, fontweight='bold')
+ax1.legend(loc='best', fontsize=17, frameon=True, fancybox=False, edgecolor='black')
 ax1.grid(True, alpha=0.3, linestyle='--', color='gray')
 
 plt.tight_layout()
-plt.savefig('../../images/housing_exports_scatter.png', dpi=300, bbox_inches='tight')
+plt.savefig('../images/housing_exports_scatter.png', dpi=300, bbox_inches='tight')
 plt.close()
 
 # Create residual plot
@@ -163,11 +163,11 @@ fig3, ax2 = plt.subplots(figsize=(12, 8))
 
 ax2.scatter(df['Year'], df['Residuals'], color='black', s=50, alpha=0.6, edgecolors='black', linewidth=1)
 ax2.axhline(y=0, color='gray', linestyle='--', linewidth=2)
-ax2.set_xlabel('Year', fontsize=12)
-ax2.set_ylabel('Residuals (thousand cubic metres)', fontsize=12)
-ax2.set_title('Residual Plot Over Time', fontsize=14, fontweight='bold')
+ax2.set_xlabel('Year', fontsize=20)
+ax2.set_ylabel('Residuals (thousand cubic metres)', fontsize=20)
+ax2.set_title('Residual Plot Over Time', fontsize=24, fontweight='bold')
 ax2.grid(True, alpha=0.3, linestyle='--', color='gray')
 
 plt.tight_layout()
-plt.savefig('../../images/housing_exports_residuals.png', dpi=300, bbox_inches='tight')
+plt.savefig('../images/housing_exports_residuals.png', dpi=300, bbox_inches='tight')
 plt.close()

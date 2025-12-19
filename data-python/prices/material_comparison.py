@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Read the price index data
-df = pd.read_csv('1810026601-eng.csv', skiprows=9)
+df = pd.read_csv('prices/1810026601-eng.csv', skiprows=9)
 
 # Find the rows for each material
 lumber_row = None
@@ -98,12 +98,12 @@ ax.axhline(y=100, color='black', linestyle=':', linewidth=1, alpha=0.5)
 
 # Add title and labels
 ax.set_title(f'Construction Material Price Indices ({plot_df["Date"].iloc[0].strftime("%B %Y")}=100)', 
-             fontsize=16, fontweight='bold', pad=20)
-ax.set_xlabel('Year', fontsize=13)
-ax.set_ylabel(f'Price Index ({plot_df["Date"].iloc[0].strftime("%B %Y")} = 100)', fontsize=13)
+             fontsize=24, fontweight='bold', pad=20)
+ax.set_xlabel('Year', fontsize=20)
+ax.set_ylabel(f'Price Index ({plot_df["Date"].iloc[0].strftime("%B %Y")} = 100)', fontsize=20)
 
 # Add legend
-ax.legend(loc='best', fontsize=11, frameon=True, fancybox=False, edgecolor='black')
+ax.legend(loc='best', fontsize=17, frameon=True, fancybox=False, edgecolor='black')
 
 # Format the axes
 ax.grid(True, alpha=0.3, linestyle='--', color='gray')
@@ -147,5 +147,5 @@ print(f"  Steel: {steel_cagr:.2f}% per year")
 print(f"  Concrete: {concrete_cagr:.2f}% per year")
 
 # Save the plot to images folder
-plt.savefig('../../images/material_comparison.png', dpi=300, bbox_inches='tight')
+plt.savefig('../images/material_comparison.png', dpi=300, bbox_inches='tight')
 plt.close()
