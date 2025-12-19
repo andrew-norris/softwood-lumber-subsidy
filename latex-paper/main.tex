@@ -191,7 +191,7 @@ The construction firms will be constrained by the cost of their inputs and the v
 \mathcal{P}^{W}_t = (1-\omega)\, P^W_t.
 \end{equation}
 
-They pay the static price for alternatives to lumber. They receive revenue based on their output. They choose $W^{\theta}_t$ and $\Phi^{\theta}_t$ to maximize output.
+They pay the static price for alternatives to lumber. They receive revenue based on their output. They choose $W^{\theta}_t$ and $\Psi^{\theta}_t$ to maximize output.
 \begin{equation}\label{eq:construction_cost}
 Y^F_t = \mathcal{P}^{W}_t\, W_t + P^\Psi_t\, \Psi_t.
 \end{equation}
@@ -205,13 +205,11 @@ The government pays for this policy by collecting a lump sum tax on the consumer
 
 The households will provide labour and capital to the sawmills firms. They will earn income on their provided capital and labour which they will spend on consumption, investment, and lump sum transfers to the government.
 
-\paragraph{Budget constraint}
 \begin{equation}\label{eq:hh_budget}
 C_t + K_{t+1} = w_t L_t + r_t K_t - T_t.
 \end{equation}
 
 The households will derive utility from leisure and consumption of the final good. The utility function has been defined as a summation of logs. Where $\gamma$ represents the preference weight between the two goods.
-\paragraph{Preferences}
 \begin{equation}\label{eq:hh_utility}
 U = \log(C_t) + \gamma \log(1-L_t).
 \end{equation}
@@ -233,7 +231,7 @@ In order to model export demand, an additional exogenous variable $X$ will be de
 \section{Calibration}
 % Calibration section goes here
 \subsection{Base Year and Steady State}
-In 2016 there were notariffs, export taxes, or quotas \cite{cbp2025softwood}. This will be used as the base year for model calibration.
+In 2016 there were no tariffs, export taxes, or quotas \cite{cbp2025softwood}. This will be used as the base year for model calibration.
 
 \paragraph{Initial Values}
 \noindent\newline
@@ -257,11 +255,11 @@ $\omega$ & $0$ & Initial subsidy level \\
 
 From these values, and the Euler in steady state. We can calculate $\beta\approx0.98$.
 \begin{equation}
-1 = \beta(r^* + 1 - \delta).
+1 = \beta(r + 1 - \delta).
 \label{eq:ss_euler}
 \end{equation}
 
-In calibrating $\phi$, research was conducted into the cross price elasticity between lumber, steel and concrete. In \cite{shahi2020sustainablewood}, the cross price elasticities were calculated to be negative. Implying that the value selected for the CES function should be low. For the purpose of this paper, $\phi=1$ was selected. While substitutability was not identified as large, this could be due to aggregate demand across the industry increasing all material usage when housing starts are high. This does not dispute the fact that lowering the price of lumber will increase its usage in the construction industry as is shown in \cite{shahi2020sustainablewood}.
+In calibrating $\phi$, research was conducted into the cross price elasticity between lumber, steel and concrete. In \cite{shahi2020sustainablewood}, the cross price elasticities were calculated to be negative. Implying that the value selected for the CES function should be low. For the purpose of this paper, $\phi=-1$ was selected. While substitutability was not identified as large, this could be due to aggregate demand across the industry increasing all material usage when housing starts are high. This does not dispute the fact that lowering the price of lumber will increase its usage in the construction industry as is shown in \cite{shahi2020sustainablewood}.
 
 Based on the value of exports given by \cite{statcan2022softwood}, this paper has normalized $Y^W=1$, $X=0.67$, $W=0.33$ as its steady state values for the share of lumber output.
 
@@ -302,6 +300,112 @@ From the intratemporal labour leisure tradeoff we can calculate $\gamma$.
 \gamma &\approx 0.179
 \end{align}
 
+In order to calibrate $\theta$ to match expenditure shares, data on construction input costs were collected from \cite{statcan2025supply_use}.
+
+\begin{align}
+  E_W &= P^W W, \\
+  E_{\Psi} &= P^{\Psi} \Psi
+\end{align}
+
+Using these expenditure values, and $P^{\Psi}$ normalized to $1$, we can rewrite the ratio $\frac{W}{\Psi}$ as the following.
+\begin{equation}
+  \frac{W}{\Psi} = \frac{E_W}{E_{\Psi}P^W}
+\end{equation}
+
+The calibration uses the following expenditure values from the construction industry:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lrl@{}}
+\hline
+\noalign{\vskip 0.2em}
+\textbf{Component} & \textbf{Value} & \textbf{Description} \\
+\hline
+\noalign{\vskip 0.4em}
+$E_W$ & 1,514,818 & Expenditure on lumber (thousands CAD) \\
+$E_{\Psi}$ & 2,183,457 & Expenditure on alternatives to lumber (thousands CAD) \\
+\hline
+\end{tabular}
+\caption{Construction Industry Expenditures on Materials (2016). Source: \citet{statcan2025supply_use} Notes: Author's calculations}
+\label{tab:expenditures}
+\end{table}
+
+With this ratio defined, using the first order condition from the construction firm, we can calibrate a value for $\theta$.
+
+\begin{align}
+\frac{P^W}{P^{\Psi}} &= \frac{\theta}{(1-\theta)}{\left( \frac{W}{\Psi}\right)}^{\phi - 1}, \\
+R &= \frac{P^W}{P^{\Psi}}\left(\frac{\Psi}{W}\right)^{\phi-1}, \\
+\theta &= \frac{R}{1 + R},\\
+\theta &\approx 0.6509.
+\end{align}
+
+Now we can calculate values for $\{A^S, A^C, \Psi\}$.
+\begin{align}
+Y^W &= A^S K^{\alpha} L^{1-\alpha}, \\
+A^S &\approx 0.7033.
+\end{align}
+
+\begin{align}
+\frac{W}{\Psi} = \frac{E_W}{E_{\Psi}P^W} &\approx 2.689, \\
+\Psi &\approx 0.1227
+\end{align}
+
+\begin{align}
+Y^F_t &= A^C\left(\theta\, W_t^{\phi} + (1-\theta)\, \Psi_t^{\phi}\right)^{1/\phi}, \\
+A^C &= \frac{Y^F}{\left(\theta\, W_t^{\phi} + (1-\theta)\, \Psi_t^{\phi}\right)^{1/\phi}}\\
+A^C &\approx 4.82
+\end{align}
+\subsection{Complete Calibration Summary}
+
+The following table summarizes all parameter values used in the model calibration for the base year 2016:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}llll@{}}
+\hline
+\noalign{\vskip 0.2em}
+\textbf{Parameter} & \textbf{Value} & \textbf{Description} & \textbf{Source/Method} \\
+\hline
+\noalign{\vskip 0.4em}
+\multicolumn{4}{l}{\textit{Exogenous Parameters}} \\[0.2em]
+$L$ & 0.33 & Time spent working & Chosen \\
+$i^*$ & 0.0197 & Real net interest rate & \citet{ceic2025interest_rates} \\
+$\delta$ & 0.0348 & Depreciation rate & \citet{pwt2025} \\
+$\alpha$ & 0.653 & Capital share of income & \citet{statcan2025gdp_expenditure} \\
+$\omega$ & 0 & Initial subsidy level & Policy assumption \\
+$\phi$ & $-1$ & CES elasticity parameter & \citet{shahi2020sustainablewood} \\[0.8em]
+
+\multicolumn{4}{l}{\textit{Calculated Parameters}} \\[0.2em]
+$\beta$ & 0.98 & Discount factor & From Euler equation \\
+$\gamma$ & 0.179 & Leisure preference weight & From labor-leisure FOC \\
+$\theta$ & 0.6509 & Input share parameter & From construction FOC \\
+$A^S$ & 0.7033 & Sawmill technology & From production function \\
+$A^C$ & 4.82 & Construction technology & From production function \\[0.8em]
+
+\multicolumn{4}{l}{\textit{Steady State Quantities}} \\[0.2em]
+$Y^W$ & 1.0 & Lumber output (normalized) & Base normalization \\
+$X$ & 0.67 & Export demand & \citet{statcan2022softwood} \\
+$W$ & 0.33 & Domestic lumber consumption & Residual from market clearing \\
+$\Psi$ & 0.1227 & Alternative materials & From expenditure ratio \\
+$K$ & 3.09 & Capital stock & From investment data \\
+$C$ & 1.0 & Consumption &  Normalized final good units\\[0.8em]
+$Y^F$ & 1.0 & Final goods output & From market clearing $Y^F = C$\\
+
+\multicolumn{4}{l}{\textit{Steady State Prices}} \\[0.2em]
+$P^F$ & 1.0 & Price of final good (numeraire) & Normalization \\
+$P^W$ & 0.258 & Lumber price & From sawmill FOC \\
+$w$ & 0.269 & Wage rate & From sawmill FOC \\
+$r$ & 0.0545 & Rental rate of capital & From $i^* + \delta$ \\
+$P^{\Psi}$ & 1.0 & Price of alternatives (normalized) & Normalization \\[0.8em]
+
+\multicolumn{4}{l}{\textit{Expenditure Data (thousands CAD)}} \\[0.2em]
+$E_W$ & 1,514,818 & Expenditure on lumber & \citet{statcan2025supply_use} \\
+$E_{\Psi}$ & 2,183,467 & Expenditure on alternatives & \citet{statcan2025supply_use} \\
+\hline
+\end{tabular}
+\caption{Complete Model Calibration Summary (Base Year: 2016)}
+\label{tab:calibration_summary}
+\end{table}
 
 
 
@@ -382,7 +486,8 @@ TC = r_t K_t + w_t L_t
 
 \textbf{Prices}
 & $\mathcal{P}^W$ & Effective price of lumber \\
-& $P^\Psi$ & Price of alternative inputs \\[0.8em]
+& $P^\Psi$ & Price of alternative inputs \\
+& $P^F$ & Price of final good \\[0.8em]
 
 \textbf{Parameters}
 & $A^C$ & Technology parameter for construction firms \\
@@ -399,9 +504,9 @@ Y^F_t = A^C\left(\theta\, W_t^{\phi} + (1-\theta)\, \Psi_t^{\phi}\right)^{1/\phi
 \tag{\ref{eq:construction_prod}}
 \end{equation}
 
-\paragraph{Cost}
+\paragraph{Budget Constraint}
 \begin{equation}
-TC^C_t = \mathcal{P}^{W}_t\, W_t + P^\Psi_t\, \Psi_t.
+P^F_t Y^F_t = \mathcal{P}^{W}_t\, W_t + P^\Psi_t\, \Psi_t.
 \tag{\ref{eq:construction_cost}}
 \end{equation}
 
@@ -520,7 +625,7 @@ C_t + K_{t+1} = w_t L_t + r_t K_t - T_t.
 
 Market clearing in each sector requires:
 \begin{align}
-Y^W &= W + X, \ref{eq:lumber_market} \\
+Y^W &= W + X, \\
 Y^F &= C,     \label{eq:final_market} \\
 L   &= L^D.   \label{eq:labour_market}
 \end{align}
@@ -577,6 +682,11 @@ W_t^{\phi-1}
 \Psi_t^{\phi-1}
 &= P^\Psi_t.
 \end{align}
+
+These conditions imply the price ratio between the goods.
+\begin{equation}
+\frac{\mathcal{P}^W_t}{P^{\Psi}_t} = \frac{\theta}{(1-\theta)}{\left( \frac{W_t}{\Psi_t}\right)}^{\phi - 1}
+\end{equation}
 
 \subsection{Effective Tariff Rate}
 \label{app:effective_rate}
